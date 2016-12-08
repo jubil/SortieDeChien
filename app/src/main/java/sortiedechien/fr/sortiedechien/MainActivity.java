@@ -1,10 +1,14 @@
 package sortiedechien.fr.sortiedechien;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,8 +30,18 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        if(!isconnected()){
+            Intent newActivity = new Intent(this, LoginActivity.class);
+            this.startActivity(newActivity);
+        }else{
+            Log.i("Connection", "Connetion à google réussie");
+        }
     }
-
+    private boolean isconnected(){
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        String id = prefs.getString("id", null);
+        return id != null;
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
