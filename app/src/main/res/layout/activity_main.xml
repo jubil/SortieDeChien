@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#BA5524">
+        android:background="@drawable/feuilles">
 
 
         <android.support.design.widget.AppBarLayout
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/comment"
             android:id="@+id/imageButton2"
-            android:background="#BA5524"
+            android:background="#00000000"
             android:adjustViewBounds="false"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -43,28 +43,29 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/search"
-            android:id="@+id/search_button"
-            android:background="#BA5524"
-            android:layout_below="@+id/imageButton2"
-            android:layout_toRightOf="@+id/imageButton2"
-            android:layout_toEndOf="@+id/imageButton2"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="23dp" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:srcCompat="@drawable/placeholder"
             android:id="@+id/imageButton3"
-            android:background="#BA5524"
+            android:background="#00000000"
             android:layout_marginLeft="20dp"
             android:layout_marginStart="20dp"
             android:layout_alignBottom="@+id/imageButton2"
             android:layout_alignLeft="@+id/search_button"
             android:layout_alignStart="@+id/search_button"
-            android:layout_marginBottom="78dp" />
+            android:layout_marginBottom="78dp"
+            android:elevation="1dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/search"
+            android:id="@+id/search_button"
+            android:background="#00000000"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="23dp"
+            android:layout_below="@+id/imageButton3"
+            android:layout_toRightOf="@+id/imageButton2"
+            android:layout_toEndOf="@+id/imageButton2" />
 
     </RelativeLayout>
 

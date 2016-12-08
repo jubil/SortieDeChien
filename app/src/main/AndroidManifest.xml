@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name="sortiedechien.fr.search.AdvancedSearchActivity"></activity>
+        <activity android:name="sortiedechien.fr.search.AdvancedSearchActivity" />
+        <activity android:name="sortiedechien.fr.search.ResultSearchActivity"></activity>
     </application>
 
 </manifest>
