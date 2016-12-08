@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/search"
-            android:id="@+id/imageButton4"
+            android:id="@+id/search_button"
             android:background="#BA5524"
             android:layout_below="@+id/imageButton2"
             android:layout_toRightOf="@+id/imageButton2"
@@ -62,8 +62,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginStart="20dp"
             android:layout_alignBottom="@+id/imageButton2"
-            android:layout_alignLeft="@+id/imageButton4"
-            android:layout_alignStart="@+id/imageButton4"
+            android:layout_alignLeft="@+id/search_button"
+            android:layout_alignStart="@+id/search_button"
             android:layout_marginBottom="78dp" />
 
     </RelativeLayout>
