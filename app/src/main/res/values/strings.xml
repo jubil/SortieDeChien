@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Cacaniche</string>
     <string name="action_settings">Déconnexion</string>
-    <string name="authtext">Authentifacation Requise</string>
+    <string name="authtext">Authentification Requise</string>
     <string name="faillog">Authentification échouée</string>
     <string name="hello">Bonjour</string>
     <string name="unknow">Inconnu</string>
