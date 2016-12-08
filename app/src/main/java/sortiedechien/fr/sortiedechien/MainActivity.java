@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -33,12 +34,11 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Log.i("Connection", "Connetion à google réussie");
         }
-        //TextView name = (TextView) findViewById(R.id.nameLabel);
-        //name.setText(R.string.hello+", "+AccountInformations.getName(getSharedPreferences(AccountInformations.prefName, MODE_PRIVATE)));
     }
     private boolean isConnected(){
         return AccountInformations.getId(getSharedPreferences(AccountInformations.prefName, MODE_PRIVATE)) != null;
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

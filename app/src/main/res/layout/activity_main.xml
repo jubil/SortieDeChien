@@ -7,41 +7,25 @@
     android:fitsSystemWindows="true"
     tools:context="sortiedechien.fr.sortiedechien.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#49D436"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-    <TextView
-        android:text=""
-        android:layout_width="wrap_content"
-        android:textSize="22dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#BA5524">
 
-        <ImageButton
-            android:layout_width="wrap_content"
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/search"
-            android:id="@+id/imageButton4"
-            android:layout_below="@+id/imageButton2"
-            android:layout_alignLeft="@+id/imageButton3"
-            android:layout_alignStart="@+id/imageButton3"
-            android:background="#BA5524"/>
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#49D436"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -59,15 +43,28 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/placeholder"
-            android:id="@+id/imageButton3"
-            android:layout_marginTop="76dp"
+            app:srcCompat="@drawable/search"
+            android:id="@+id/imageButton4"
             android:background="#BA5524"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/imageButton2"
             android:layout_toRightOf="@+id/imageButton2"
             android:layout_toEndOf="@+id/imageButton2"
-            android:layout_marginLeft="42dp"
-            android:layout_marginStart="42dp" />
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="23dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/placeholder"
+            android:id="@+id/imageButton3"
+            android:background="#BA5524"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_alignBottom="@+id/imageButton2"
+            android:layout_alignLeft="@+id/imageButton4"
+            android:layout_alignStart="@+id/imageButton4"
+            android:layout_marginBottom="78dp" />
 
     </RelativeLayout>
 
