@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">SortieDeChien</string>
+    <string name="app_name">Cacaniche</string>
     <string name="action_settings">Settings</string>
     <string name="authtext">Authentifacation Requise</string>
     <string name="faillog">Authentification échouée</string>
+    <string name="hello">Bonjour</string>
 </resources>

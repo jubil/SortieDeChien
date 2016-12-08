@@ -1,6 +1,7 @@
 package sortiedechien.fr.sortiedechien;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Scope;
 
+import sortiedechien.fr.googleauth.AccountInformations;
 import sortiedechien.fr.googleauth.GoogleConnectionFailedListener;
 
 public class LoginActivity extends AppCompatActivity {
@@ -67,7 +69,15 @@ public class LoginActivity extends AppCompatActivity {
     private void updateUI(boolean b, @Nullable GoogleSignInAccount account){
         if(b && account != null){
             Log.i("SignIn", "Conneté à google, affichage de la vue d'accueil");
-            Log.e("Unimplemented","Non implémenté actuellement");
+            SharedPreferences preferences = getSharedPreferences(AccountInformations.prefName, MODE_APPEND);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("id", account.getId());
+            editor.putString("email", account.getEmail());
+            editor.putString("familyname", account.getFamilyName());
+            editor.putString("name", account.getGivenName());
+            editor.apply();
+            Intent launchMain = new Intent(this, MainActivity.class);
+            this.startActivity(launchMain);
         }else{
             Log.i("SignIn", "Pas connecté à google");
             Toast.makeText(this, R.string.faillog, Toast.LENGTH_LONG);

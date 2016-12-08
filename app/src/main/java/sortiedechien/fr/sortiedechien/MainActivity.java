@@ -12,6 +12,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import sortiedechien.fr.googleauth.AccountInformations;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,25 +27,17 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        if(!isconnected()){
+        if(!isConnected()){
             Intent newActivity = new Intent(this, LoginActivity.class);
             this.startActivity(newActivity);
         }else{
             Log.i("Connection", "Connetion à google réussie");
         }
+        //TextView name = (TextView) findViewById(R.id.nameLabel);
+        //name.setText(R.string.hello+", "+AccountInformations.getName(getSharedPreferences(AccountInformations.prefName, MODE_PRIVATE)));
     }
-    private boolean isconnected(){
-        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
-        String id = prefs.getString("id", null);
-        return id != null;
+    private boolean isConnected(){
+        return AccountInformations.getId(getSharedPreferences(AccountInformations.prefName, MODE_PRIVATE)) != null;
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
