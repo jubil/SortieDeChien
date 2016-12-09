@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import sortiedechien.fr.sortiedechien.MainActivity;
 import sortiedechien.fr.sortiedechien.R;
+import sortiedechien.fr.sqlite.DbHandler;
 
 public class AdvancedSearchActivity extends AppCompatActivity {
 

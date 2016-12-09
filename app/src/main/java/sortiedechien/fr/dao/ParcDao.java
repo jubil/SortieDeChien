@@ -17,8 +17,7 @@ import sortiedechien.fr.sqlite.DbHandler;
 public class ParcDao extends BaseDao{
 
 
-    private SQLiteDatabase db;
-    private DbHandler handler;
+
     private String tableName = DbHandler.TABLE_PARCS;
     private String[] allColumns = {DbHandler.COLUMN_LIBELLE,
             DbHandler.COLUMN_POSITION_X,
