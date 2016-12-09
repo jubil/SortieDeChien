@@ -40,33 +40,58 @@
     </LinearLayout>
 
     <CheckBox
-        android:text="CheckBox"
+        android:text="@string/acceshand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox3" />
+        android:id="@+id/acceshand" />
 
     <CheckBox
-        android:text="CheckBox"
+        android:text="@string/pointdeau"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox4" />
+        android:id="@+id/point_eau" />
 
     <CheckBox
-        android:text="CheckBox"
+        android:text="@string/chienauto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox5" />
+        android:id="@+id/chien_auto" />
 
     <CheckBox
-        android:text="CheckBox"
+        android:text="@string/sanitaires"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox6" />
+        android:id="@+id/sanitaire" />
 
     <CheckBox
-        android:text="CheckBox"
+        android:text="@string/jeux"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox7" />
+        android:id="@+id/jeux" />
+
+    <CheckBox
+        android:text="@string/parcclos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clos" />
+
+    <RatingBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/popularité"
+        android:numStars="5" />
+
+    <TextView
+        android:text="@string/commentaire"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/comm" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_comm">
+
+    </GridLayout>
 
 </LinearLayout>
