@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">Cacaniche</string>
     <string name="action_settings">Déconnexion</string>
-    <string name="authtext">Authentifacation Requise</string>
+    <string name="authtext">Authentification Requise</string>
     <string name="faillog">Authentification échouée</string>
     <string name="hello">Bonjour</string>
     <string name="unknow">Inconnu</string>
     <string name="lieu">Lieu</string>
     <string name="taille">Taille : </string>
+    <string name="pointdeau">Point d\'eau</string>
+    <string name="acceshand">Accès handicapé</string>
+    <string name="chienauto">Chien Autorisé</string>
+    <string name="sanitaires">Sanitaires</string>
+    <string name="jeux">Jeux</string>
+    <string name="parcclos">Parc clos</string>
+    <string name="search">Recherche</string>
 </resources>
