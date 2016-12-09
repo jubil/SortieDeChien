@@ -1,29 +1,18 @@
 package sortiedechien.fr.sortiedechien;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
-import java.io.IOException;
-
-import sortiedechien.fr.dao.ParcDao;
+import java.util.Calendar;
 import sortiedechien.fr.googleauth.AccountInformations;
 import sortiedechien.fr.googleauth.GoogleUnlogger;
+import sortiedechien.fr.map.OnClickMainMap;
 import sortiedechien.fr.search.OnSearchClickListener;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,6 +32,17 @@ public class MainActivity extends AppCompatActivity {
         }
         ImageButton search_button = (ImageButton) findViewById(R.id.search_button);
         search_button.setOnClickListener(new OnSearchClickListener(this));
+
+        ImageButton map_button = (ImageButton) findViewById(R.id.map_button);
+        map_button.setOnClickListener(new OnClickMainMap(this));
+
+        SharedPreferences preferences = getSharedPreferences("infos", MODE_PRIVATE);
+        if(preferences.getInt("year",0) != Calendar.YEAR ){
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putInt("year", Calendar.YEAR);
+            editor.apply();
+            //TODO update Database
+        }
     }
     private boolean isConnected(){
         return AccountInformations.getId(getSharedPreferences(AccountInformations.prefName, MODE_PRIVATE)) != null;
