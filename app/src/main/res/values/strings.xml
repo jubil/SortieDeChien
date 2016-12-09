@@ -5,4 +5,6 @@
     <string name="faillog">Authentification échouée</string>
     <string name="hello">Bonjour</string>
     <string name="unknow">Inconnu</string>
+    <string name="lieu">Lieu</string>
+    <string name="taille">Taille : </string>
 </resources>
