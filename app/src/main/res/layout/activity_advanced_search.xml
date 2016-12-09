@@ -19,6 +19,7 @@
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
             android:id="@+id/pointdeau"
             android:text="@string/pointdeau" />
 
@@ -26,36 +27,44 @@
             android:text="@string/acceshand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
             android:id="@+id/acceshand" />
 
         <CheckBox
             android:text="@string/chienauto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
             android:id="@+id/autorise" />
 
         <CheckBox
             android:text="@string/sanitaires"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
             android:id="@+id/sanitaires" />
 
         <CheckBox
             android:text="@string/jeux"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
             android:id="@+id/jeux" />
 
         <CheckBox
             android:text="@string/parcclos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
             android:id="@+id/parcclos" />
 
         <Button
             android:text="@string/search"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:id="@+id/button2" />
+            android:layout_gravity="center"
+            android:id="@+id/search_button"
+            android:textColor="#FEFEFE"
+            android:background="#BA5524" />
     </LinearLayout>
 </RelativeLayout>
