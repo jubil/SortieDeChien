@@ -14,4 +14,5 @@
     <string name="search">Recherche</string>
     <string name="titlesearch">Résultat de votre recheche</string>
     <string name="more">…</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

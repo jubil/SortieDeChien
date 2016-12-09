@@ -21,6 +21,7 @@ import org.w3c.dom.Text;
 
 import sortiedechien.fr.googleauth.AccountInformations;
 import sortiedechien.fr.googleauth.GoogleUnlogger;
+import sortiedechien.fr.map.OnClickMainMap;
 import sortiedechien.fr.search.OnSearchClickListener;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         }
         ImageButton search_button = (ImageButton) findViewById(R.id.search_button);
         search_button.setOnClickListener(new OnSearchClickListener(this));
+
+        ImageButton map_button = (ImageButton) findViewById(R.id.map_button);
+        map_button.setOnClickListener(new OnClickMainMap(this));
     }
     private boolean isConnected(){
         return AccountInformations.getId(getSharedPreferences(AccountInformations.prefName, MODE_PRIVATE)) != null;
