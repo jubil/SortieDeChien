@@ -9,7 +9,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
 
+<<<<<<< HEAD
 import sortiedechien.fr.sortiedechien.MainActivity;
+=======
+import sortiedechien.fr.dao.ParcDao;
+import sortiedechien.fr.data.Parc;
+>>>>>>> 07333ccd6f8a67e363c6255611e9de701350b64d
 import sortiedechien.fr.sortiedechien.R;
 import sortiedechien.fr.sqlite.DbHandler;
 
