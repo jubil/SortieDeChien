@@ -21,6 +21,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name="sortiedechien.fr.search.AdvancedSearchActivity" />
         <activity android:name="sortiedechien.fr.search.ResultSearchActivity"></activity>
+        <activity android:name="sortiedechien.fr.search.DetailSearchActivity"></activity>
     </application>
 
 </manifest>
