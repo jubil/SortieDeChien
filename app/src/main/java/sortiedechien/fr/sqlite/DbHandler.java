@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DbHandler extends SQLiteOpenHelper{
 
-    public static final String TABLE_PARCS = "PARCS";
+    public static final String TABLE_PARCS = "PARC";
     public static final String COLUMN_LIBELLE = "LIBELLE";
     public static final String COLUMN_POSITION_X = "POSITION_X";
     public static final String COLUMN_POSITION_Y = "POSITION_Y";

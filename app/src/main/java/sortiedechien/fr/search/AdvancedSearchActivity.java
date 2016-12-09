@@ -3,7 +3,10 @@ package sortiedechien.fr.search;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import sortiedechien.fr.dao.ParcDao;
+import sortiedechien.fr.data.Parc;
 import sortiedechien.fr.sortiedechien.R;
+import sortiedechien.fr.sqlite.DbHandler;
 
 public class AdvancedSearchActivity extends AppCompatActivity {
 
@@ -11,5 +14,8 @@ public class AdvancedSearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced_search);
+        ParcDao parcDao = new ParcDao(getApplicationContext());
+        parcDao.open();
+
     }
 }

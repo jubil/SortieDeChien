@@ -16,4 +16,6 @@ public class DetailSearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_parc);
     }
+
+    
 }

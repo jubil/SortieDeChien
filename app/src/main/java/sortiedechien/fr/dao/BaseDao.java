@@ -25,7 +25,7 @@ public class BaseDao {
 
     public SQLiteDatabase open(){
 
-        db = handler.getWritableDatabase();
+        this.db = handler.getWritableDatabase();
 
         return db;
 
