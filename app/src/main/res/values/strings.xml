@@ -12,4 +12,6 @@
     <string name="jeux">Jeux</string>
     <string name="parcclos">Parc clos</string>
     <string name="search">Recherche</string>
+    <string name="titlesearch">Résultat de votre recheche</string>
+    <string name="more">…</string>
 </resources>
