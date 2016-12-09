@@ -1,7 +1,12 @@
 package sortiedechien.fr.map;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -10,9 +15,16 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.Arrays;
+import java.util.List;
+
+import sortiedechien.fr.dao.ParcDao;
+import sortiedechien.fr.data.Parc;
+import sortiedechien.fr.search.AdvancedSearchActivity;
+import sortiedechien.fr.sortiedechien.MainActivity;
 import sortiedechien.fr.sortiedechien.R;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
@@ -24,8 +36,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#49D436")));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId() == android.R.id.home){
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+        return true;
+    }
 
     /**
      * Manipulates the map once available.
@@ -40,9 +64,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        ParcDao parcDao = new ParcDao(this);
+        parcDao.open();
+        //List<Parc> parcs = parcDao.selectAll();
+        List<Parc> parcs = Arrays.asList(new Parc[]{new Parc("lib test","47.2193934","-1.5776035", true, true, true, 100, true, true, true)});
+        parcDao.close();
+        for(Parc p : parcs){
+            double lat = Double.valueOf(p.getPosition_x());
+            double lng = Double.valueOf(p.getPosition_y());
+            LatLng parcLocation = new LatLng(lat,lng);
+            mMap.addMarker(new MarkerOptions().position(parcLocation).title(p.getLibelle()));
+        }
+
+        LatLng myLocation = new LatLng(47.2237205, -1.5449378);
+        mMap.addMarker(new MarkerOptions().position(myLocation).title( getResources().getString(R.string.myloc)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation));
     }
 }
