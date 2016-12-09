@@ -23,6 +23,7 @@ import org.w3c.dom.Text;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import sortiedechien.fr.data.Parc;
@@ -53,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton map_button = (ImageButton) findViewById(R.id.map_button);
         map_button.setOnClickListener(new OnClickMainMap(this));
+
+        SharedPreferences preferences = getSharedPreferences("infos", MODE_PRIVATE);
+        if(preferences.getInt("year",0) != Calendar.YEAR ){
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putInt("year", Calendar.YEAR);
+            editor.apply();
+            //TODO update Database
+        }
     }
     private boolean isConnected(){
         return AccountInformations.getId(getSharedPreferences(AccountInformations.prefName, MODE_PRIVATE)) != null;

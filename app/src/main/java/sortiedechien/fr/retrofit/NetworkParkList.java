@@ -22,10 +22,10 @@ public class NetworkParkList {
         notifiers = new ArrayList<>();
         asyncGet = new AsyncGet();
     }
-    private void addNetworkNotifier(INetworkNotifier notifier){
+    public void addNetworkNotifier(INetworkNotifier notifier){
         notifiers.add(notifier);
     }
-    private void requestParkList(INetworkNotifier... toNotify) {
+    public void requestParkList(INetworkNotifier... toNotify) {
         for(INetworkNotifier in : toNotify){
             addNetworkNotifier(in);
         }
