@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListAdapter;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -57,7 +58,11 @@ public class OnSearchLaunchClickListener implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         ParcDao parcDao = new ParcDao(context == null ? view.getContext() : context);
-        parcDao.open();
+        try {
+            parcDao.open();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         search(parcDao.selectAll());
         parcDao.close();
     }

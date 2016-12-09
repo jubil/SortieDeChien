@@ -19,6 +19,9 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.io.IOException;
+
+import sortiedechien.fr.dao.ParcDao;
 import sortiedechien.fr.googleauth.AccountInformations;
 import sortiedechien.fr.googleauth.GoogleUnlogger;
 import sortiedechien.fr.search.OnSearchClickListener;

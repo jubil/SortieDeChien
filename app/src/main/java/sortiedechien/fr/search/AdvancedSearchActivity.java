@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import sortiedechien.fr.dao.ParcDao;
 import sortiedechien.fr.sortiedechien.MainActivity;
 import sortiedechien.fr.sortiedechien.R;
 
@@ -18,13 +19,8 @@ public class AdvancedSearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced_search);
-
-
         Button button = (Button) findViewById(R.id.search_button);
         button.setOnClickListener( new OnSearchLaunchClickListener(this) );
-
-
-
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#49D436")));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

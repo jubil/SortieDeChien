@@ -35,11 +35,12 @@ public class ParcDao extends BaseDao{
     }
 
 
+
     public ArrayList<Parc> selectAll(){
 
 
         ArrayList<Parc> parcs = new ArrayList<Parc>();
-        Cursor c  = db.rawQuery("SELECT * FROM " + tableName + "", null);
+        Cursor c  = db.rawQuery("SELECT * FROM  " + tableName + " ;", null);
 
         while (c.moveToNext()){
 
