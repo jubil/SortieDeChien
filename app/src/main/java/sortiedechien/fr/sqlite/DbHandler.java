@@ -30,6 +30,8 @@ public class DbHandler extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
+
+        sqLiteDatabase.
     }
 
     @Override

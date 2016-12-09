@@ -14,8 +14,6 @@ public class AdvancedSearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced_search);
-        ParcDao parcDao = new ParcDao(getApplicationContext());
-        parcDao.open();
 
     }
 }
