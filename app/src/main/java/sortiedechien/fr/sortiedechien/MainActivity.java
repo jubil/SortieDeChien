@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton map_button = (ImageButton) findViewById(R.id.map_button);
         map_button.setOnClickListener(new OnClickMainMap(this));
 
+        this.setTitle(AccountInformations.getName(getSharedPreferences(AccountInformations.prefName, MODE_PRIVATE)));;
     }
     private boolean isConnected(){
         return AccountInformations.getId(getSharedPreferences(AccountInformations.prefName, MODE_PRIVATE)) != null;
