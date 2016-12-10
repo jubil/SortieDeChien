@@ -2,14 +2,22 @@ package sortiedechien.fr.sortiedechien;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import java.io.IOException;
 import java.util.Calendar;
+
+import sortiedechien.fr.dao.BaseDao;
+import sortiedechien.fr.dao.ParcDao;
 import sortiedechien.fr.googleauth.AccountInformations;
 import sortiedechien.fr.googleauth.GoogleUnlogger;
 import sortiedechien.fr.map.OnClickMainMap;
@@ -36,13 +44,6 @@ public class MainActivity extends AppCompatActivity {
         ImageButton map_button = (ImageButton) findViewById(R.id.map_button);
         map_button.setOnClickListener(new OnClickMainMap(this));
 
-        SharedPreferences preferences = getSharedPreferences("infos", MODE_PRIVATE);
-        if(preferences.getInt("year",0) != Calendar.YEAR ){
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putInt("year", Calendar.YEAR);
-            editor.apply();
-            //TODO update Database
-        }
     }
     private boolean isConnected(){
         return AccountInformations.getId(getSharedPreferences(AccountInformations.prefName, MODE_PRIVATE)) != null;
@@ -53,21 +54,27 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         menu.getItem(0).setOnMenuItemClickListener(new GoogleUnlogger(this));
+        menu.getItem(1).setOnMenuItemClickListener(new DbUpdate());
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        return super.onOptionsItemSelected(item);
+    }
+    private class DbUpdate implements MenuItem.OnMenuItemClickListener{
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        @Override
+        public boolean onMenuItemClick(MenuItem menuItem) {
+            try{
+                ParcDao parcDao = new ParcDao(getApplicationContext());
+                parcDao.open();
+                parcDao.changeVersion();
+                parcDao.close();
+            }catch (IOException e){
+                Toast.makeText(getApplicationContext(),getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
+            }
             return true;
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }

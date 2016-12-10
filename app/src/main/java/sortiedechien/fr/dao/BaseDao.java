@@ -2,6 +2,7 @@ package sortiedechien.fr.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.io.IOException;
 
@@ -15,7 +16,7 @@ public class BaseDao {
 
 
     private  final static String NAME = "sortieChien.db";
-    private final static int VERSION = 2;
+    private static int VERSION = 1;
     protected SQLiteDatabase db = null;
     protected DbHandler handler = null;
 
@@ -24,13 +25,13 @@ public class BaseDao {
 
         this.handler = new DbHandler(context, NAME, null, VERSION);
     }
-
+    public void changeVersion(){
+        VERSION++;
+        db.setVersion(VERSION);
+    }
     public SQLiteDatabase open() throws IOException{
-
         this.db = handler.getWritableDatabase();
-
         return db;
-
     }
 
 

@@ -20,7 +20,7 @@ public class ParcGSon {
     private String Acces_handicap_y_compris_sanitai;
     private String Gardien;
     private Integer Code;
-    private String Adresse_postale;
+    private String adresse_postale;
     private Integer Surface_hors_batiments;
     private String Sanitaires;
     private String Collection_vegetale;
