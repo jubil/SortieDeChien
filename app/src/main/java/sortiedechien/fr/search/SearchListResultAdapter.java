@@ -2,14 +2,15 @@ package sortiedechien.fr.search;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.List;
 
 import sortiedechien.fr.dao.ParcDao;
 import sortiedechien.fr.data.Parc;
+import sortiedechien.fr.map.MapsActivity;
 import sortiedechien.fr.sortiedechien.R;
 
 /**
@@ -53,15 +55,25 @@ public class SearchListResultAdapter {
             parcDao.open();
         } catch (IOException e) {
             e.printStackTrace();
+            return;
         }
         for( Parc parc : parcDao.selectAll()){
-            if(toFiltre(parc.isPoint_eau(), parc.isAcces_handicape(), parc.isChien_interdit(), parc.isSanitaire(), parc.isJeux(), parc.isParc_clos()).equals(filtre)){
+            String filter = toFiltre(parc.isPoint_eau(), parc.isAcces_handicape(), parc.isChien_interdit(), parc.isSanitaire(), parc.isJeux(), parc.isParc_clos());
+            if(isFilterOk(filtre, filter)){
                 parcsFiltres.add(parc);
             }
         }
         parcDao.close();
     }
-
+    private boolean isFilterOk(String filter, String filtre){
+        char[] chars = filtre.toCharArray();
+        for(int i = 0; i < chars.length; i++){
+            if(chars[i] == '1' && chars[i] != filter.charAt(i)){
+                return false;
+            }
+        }
+        return true;
+    }
     private class AdapterSearch extends ArrayAdapter {
         private LayoutInflater inflater;
         private List<Parc> data;
@@ -79,8 +91,22 @@ public class SearchListResultAdapter {
             if(view == null){
                 view = inflater.inflate(R.layout.row_result_layout, null);
             }
+            LatLng myLocation = MapsActivity.getMyLocation(context);
+            Location myLoc = toLocation(myLocation.latitude, myLocation.longitude);
+            Location dataLocation = toLocation(Double.valueOf(data.get(position).getPosition_x()),Double.valueOf(data.get(position).getPosition_y()));
+            Float distance = myLoc.distanceTo(dataLocation);
+            ((TextView) view.findViewById(R.id.distancetext)).setText(toDistanceUnit(distance.intValue()));
             ((TextView)view.findViewById(R.id.textresult)).setText(data.get(position).getLibelle());
             return view;
+        }
+        private Location toLocation(double latitude, double longitude){
+            Location myLoc = new Location(LocationManager.GPS_PROVIDER);
+            myLoc.setLatitude(latitude);
+            myLoc.setLongitude(longitude);
+            return myLoc;
+        }
+        private String toDistanceUnit(int metters){
+            return metters > 1000 ? metters/1000+" km" : metters+" m";
         }
     }
 }

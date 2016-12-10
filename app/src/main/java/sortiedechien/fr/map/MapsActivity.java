@@ -90,19 +90,28 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } catch (IOException e) {
             e.printStackTrace();
         }
-        LatLng myLocation;
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            myLocation = new LatLng(47.2237205, -1.5449378); // iut
-        }else{
-            LocationManager locationManager = ((LocationManager) getSystemService(Context.LOCATION_SERVICE));
-            Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(new Criteria(), false));
-            myLocation = new LatLng(location.getLatitude(), location.getLongitude());
-        }
+        LatLng myLocation = getMyLocation(this);
         MarkerOptions marker = new MarkerOptions()
                 .position(myLocation)
                 .title( getResources().getString(R.string.myloc))
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker));
         mMap.addMarker(marker);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 14));
+    }
+
+    /**
+     * @param context
+     * @return the users locatin or the iut's location if the user won't use it's location
+     */
+    public static LatLng getMyLocation(Context context){
+        LatLng myLocation;
+        if (ActivityCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            myLocation = new LatLng(47.2237205, -1.5449378); // iut
+        }else{
+            LocationManager locationManager = ((LocationManager) context.getSystemService(Context.LOCATION_SERVICE));
+            Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(new Criteria(), false));
+            myLocation = new LatLng(location.getLatitude(), location.getLongitude());
+        }
+        return myLocation;
     }
 }
