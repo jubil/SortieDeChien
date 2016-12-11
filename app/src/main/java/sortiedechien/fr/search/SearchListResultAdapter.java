@@ -2,12 +2,14 @@ package sortiedechien.fr.search;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -97,6 +99,7 @@ public class SearchListResultAdapter {
             Float distance = myLoc.distanceTo(dataLocation);
             ((TextView) view.findViewById(R.id.distancetext)).setText(toDistanceUnit(distance.intValue()));
             ((TextView)view.findViewById(R.id.textresult)).setText(data.get(position).getLibelle());
+            view.findViewById(R.id.detailsbutton).setOnClickListener(new OnDetailsClickListener(context, data.get(position)));
             return view;
         }
         private Location toLocation(double latitude, double longitude){
@@ -107,6 +110,27 @@ public class SearchListResultAdapter {
         }
         private String toDistanceUnit(int metters){
             return metters > 1000 ? metters/1000+" km" : metters+" m";
+        }
+    }
+    private class OnDetailsClickListener implements View.OnClickListener{
+        private Parc parc;
+        private Context context;
+        private OnDetailsClickListener(Context context, Parc parc){
+            this.parc = parc;
+            this.context = context;
+        }
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(context, DetailSearchActivity.class);
+            intent.putExtra("nom_parc", parc.getLibelle());
+            intent.putExtra("taille", parc.getSurface());
+            intent.putExtra("eau", parc.isPoint_eau());
+            intent.putExtra("autorise", !parc.isChien_interdit());
+            intent.putExtra("sanitaire", parc.isSanitaire());
+            intent.putExtra("jeux", parc.isJeux());
+            intent.putExtra("clos", parc.isParc_clos());
+            intent.putExtra("popularite", 0);
+            context.startActivity(intent);
         }
     }
 }
