@@ -27,7 +27,7 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name="sortiedechien.fr.search.AdvancedSearchActivity" />
-        <activity android:name="sortiedechien.fr.search.DetailSearchActivity"></activity>
+        <activity android:name="sortiedechien.fr.search.DetailSearchActivity" />
         <activity android:name="sortiedechien.fr.search.ResultSearchActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -43,7 +43,11 @@
 
         <activity
             android:name="sortiedechien.fr.map.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name="sortiedechien.fr.search.basic.BasicSearch"
+            android:label="@string/title_activity_basic_search"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
