@@ -9,9 +9,11 @@ import java.io.IOException;
 import java.util.List;
 
 import sortiedechien.fr.dao.BaseDao;
+import sortiedechien.fr.data.Arbre;
 import sortiedechien.fr.data.Parc;
 import sortiedechien.fr.retrofit.INetworkNotifier;
 import sortiedechien.fr.retrofit.NetworkParkList;
+import sortiedechien.fr.retrofit_arbres.NetworkTreeList;
 
 /**
  * Created by guillaume on 08/12/16.
@@ -164,12 +166,14 @@ public class DbHandler extends SQLiteOpenHelper{
     }
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        onCreate(db);
+        onUpgrade(db, oldVersion, newVersion);
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int old, int newv) {
         NetworkParkList networkParkList = new NetworkParkList(context);
         networkParkList.requestParkList(new Notifier(sqLiteDatabase));
+        NetworkTreeList networkTreeList = new NetworkTreeList(context);
+        networkTreeList.requestTreeList(new NotifierArbres(sqLiteDatabase));
     }
 
     // this class allows us to be notified when data are received from the update url
@@ -190,7 +194,6 @@ public class DbHandler extends SQLiteOpenHelper{
             }
             database.beginTransaction();
             database.execSQL(DROP_PARC);
-            database.execSQL(DROP_ARBRE);
             for(Parc p : parcs){
                 database.execSQL(createInsertParc(p));
             }
@@ -198,4 +201,21 @@ public class DbHandler extends SQLiteOpenHelper{
             database.endTransaction();
         }
     }
+    public class NotifierArbres implements sortiedechien.fr.retrofit_arbres.INetworkNotifier{
+        private SQLiteDatabase database;
+        private NotifierArbres(SQLiteDatabase database){
+            this.database = database;
+        }
+        @Override
+        public void dataResult(List<Arbre> arbres) {
+            database.beginTransaction();
+            database.execSQL(DROP_ARBRE);
+            for(Arbre a : arbres){
+                //Log.e("ARBRE", a);
+            }
+            database.setTransactionSuccessful();
+            database.endTransaction();
+        }
+    }
+
 }

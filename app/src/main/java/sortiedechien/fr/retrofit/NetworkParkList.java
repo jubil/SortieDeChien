@@ -42,7 +42,7 @@ public class NetworkParkList {
         public void onPostExecute(List<ParcGSon> parcs){
             List<Parc> res = new ArrayList<>();
             for(ParcGSon parc : parcs){
-                parc.toParc();
+                res.add(parc.toParc());
             }
             for(INetworkNotifier notifier : notifiers){
                 notifier.dataResult(res);
