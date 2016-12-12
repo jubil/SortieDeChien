@@ -6,6 +6,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.io.IOException;
+import java.util.List;
+
+import sortiedechien.fr.dao.BaseDao;
+import sortiedechien.fr.data.Parc;
+import sortiedechien.fr.retrofit.INetworkNotifier;
+import sortiedechien.fr.retrofit.NetworkParkList;
 
 /**
  * Created by guillaume on 08/12/16.
@@ -25,8 +31,10 @@ public class DbHandler extends SQLiteOpenHelper{
     public static final String COLUMN_SANITAIRE = "SANITAIRE";
     public static final String COLUMN_JEUX = "JEUX";
     public static final String COLUMN_PARC_CLOS = "PARC_CLOS";
-    public static final String CREATE_DB = "PRAGMA foreign_keys=OFF;\n" +
-            "BEGIN TRANSACTION;\n" +
+    private static String DROP_PARC = "DROP TABLE IF EXISTS PARC";
+    private static String DROP_ARBRE = "DROP TABLE IF EXISTS ARBRE";
+    private Context context;
+    public static final String CREATE_DB =
             "CREATE TABLE PARC ( LIBELLE VARCHAR PRIMARY KEY, POSITION_X VARCHAR, POSITION_Y VARCHAR, point_eau BOOLEAN, acces_handicape BOOLEAN, chien_interdit BOOLEAN, surface NUMBER, sanitaire BOOLEAN, jeux BOOLEAN, parc_clos BOOLEAN);\n" +
             "INSERT INTO \"parc\" VALUES('Parc du grand-blottereau','47.2276','-1.50934',1,1,0,192660,1,1,1);\n" +
             "INSERT INTO \"parc\" VALUES('Square benoni goulin','47.2023','-1.55138',0,0,0,1979,0,0,0);\n" +
@@ -119,17 +127,7 @@ public class DbHandler extends SQLiteOpenHelper{
             "INSERT INTO \"parc\" VALUES('Centre social de la pilotiÃ¨re','47.2452','-1.52404',0,0,0,10830,0,1,1);\n" +
             "INSERT INTO \"parc\" VALUES('Square augustin fresnel','47.2431','-1.52293',0,1,0,5600,0,1,0);\n" +
             "INSERT INTO \"parc\" VALUES('Parc de broussais','47.2268','-1.52255',0,1,0,12130,0,1,0);\n" +
-            "CREATE TABLE arbre(\n" +
-            "  \"ID\" TEXT,\n" +
-            "  \"ADRESSE\" TEXT,\n" +
-            "  \"GENRE\" TEXT,\n" +
-            "  \"ESPECE\" TEXT,\n" +
-            "  \"ALLERGENE\" TEXT,\n" +
-            "  \"DIAMETRE\" TEXT,\n" +
-            "  \"HAUTEUR\" TEXT,\n" +
-            "  \"LATITUDE\" TEXT,\n" +
-            "  \"LONGITUDE\" TEXT\n" +
-            ");\n" +
+            "CREATE TABLE ARBRE(ID TEXT,ADRESSE TEXT,GENRE TEXT,ESPECE TEXT,ALLERGENE TEXT,DIAMETRE TEXT,HAUTEUR TEXT,LATITUDE TEXT,LONGITUDE TEXT);\n"+
             "INSERT INTO \"arbre\" VALUES('1','Avenue de Chanzy','Prunus','serrulata','0','43','5','47.22401','-1.545548');\n" +
             "INSERT INTO \"arbre\" VALUES('2','Quai de Versailles','Prunus','serrulata','0','43','5','47.224561','-1.553899');\n" +
             "INSERT INTO \"arbre\" VALUES('3','Rue de Miséricorde','Carpinus','betulus','1','29','5','47.22148','-1.56579');\n" +
@@ -142,29 +140,62 @@ public class DbHandler extends SQLiteOpenHelper{
             "INSERT INTO \"arbre\" VALUES('10','Allée Duquesne','Platanus','acerifolia','1','42','5','47.218637','-1.556829');\n" +
             "INSERT INTO \"arbre\" VALUES('11','Boulevard de la Prairie au Duc','Prunus','serrulata','0','37','3','47.205093','-1.556954');\n" +
             "INSERT INTO \"arbre\" VALUES('12','Boulevard Georges Mandel','Prunus','serrulata','0','35','3','47.201500','-1.539705');\n" +
-            "INSERT INTO \"arbre\" VALUES('13','Rue du Docteur Paul Michaux','Prunus','serrulata','0','29','3','47.207572','-1.511358');\n" +
-            "COMMIT;\n";
+            "INSERT INTO \"arbre\" VALUES('13','Rue du Docteur Paul Michaux','Prunus','serrulata','0','29','3','47.207572','-1.511358');\n";
 
 
     public DbHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
-
+        this.context =context;
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
-
             sqLiteDatabase.beginTransaction();
-            sqLiteDatabase.execSQL(CREATE_DB, null);
+
+            sqLiteDatabase.execSQL(DROP_PARC);
+            sqLiteDatabase.execSQL(DROP_ARBRE);
+            for(String line : CREATE_DB.split("\n")){
+                sqLiteDatabase.execSQL(line);
+            }
             sqLiteDatabase.setTransactionSuccessful();
             sqLiteDatabase.endTransaction();
 
 
     }
-
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion){
+        onCreate(db);
+    }
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int old, int newv) {
+        NetworkParkList networkParkList = new NetworkParkList(context);
+        networkParkList.requestParkList(new Notifier(sqLiteDatabase));
+    }
 
+    // this class allows us to be notified when data are received from the update url
+    private static class Notifier implements INetworkNotifier{
+        private SQLiteDatabase database;
+        private Notifier(SQLiteDatabase database){
+            this.database = database;
+        }
+        private String createInsertParc(Parc parc){
+            return String.format("INSERT INTO %s VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s');",
+                    TABLE_PARCS, parc.getLibelle(), parc.getPosition_x(), parc.getPosition_y(), parc.isPoint_eau(), parc.isAcces_handicape(),
+                    parc.isChien_interdit(), parc.getSurface(), parc.isSanitaire(), parc.isJeux(), parc.isParc_clos());
+        }
+        @Override
+        public void dataResult(List<Parc> parcs) {
+            if(parcs == null|| parcs.isEmpty()){
+                return;
+            }
+            database.beginTransaction();
+            database.execSQL(DROP_PARC);
+            database.execSQL(DROP_ARBRE);
+            for(Parc p : parcs){
+                database.execSQL(createInsertParc(p));
+            }
+            database.setTransactionSuccessful();
+            database.endTransaction();
+        }
     }
 }

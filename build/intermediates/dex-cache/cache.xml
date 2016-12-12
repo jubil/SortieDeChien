@@ -3,264 +3,345 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="491afc08f27d15065bd8c971ca5bf3f8bd63229b">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3b6ef2aada45e9744cfa3dbb558ba8b021ba796f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_046249de4c5fed9a32fe410b1221e221a741f944\classes.dex" />
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_583cf6d460dd0350d4502b549ba81dcb41660f89\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a1ed98e01bd58976d80c062fd0ea2968a1ff68a1">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-9.8.0_e211bec004fd776b9bde2fe048b5c1e26f4e5cbb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_01b552ce960502e5586425ab601ca298abc6d5ff\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.1_e84d35df980eceb80f6252ffa3589f3cf31660e1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.8.0_4c5efb608fa25bb5d3394062132c4cad93cf3d75\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_297eff7d0e0f44de85f18c78a3cc82ec293d6d1e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_32d1dd6c52d7e3945dd1aa40fae13332351df881\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.8.0_9367311c83bde7dcf43e990ab8681d506a8be361\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-9.8.0_7be6f23299817c6e4dc712012aeb58709406973a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="9ff04cc3470178a44512624036751a803418c2ca">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-9.8.0_6ca06b9392945e4e52de4c58a8fa9c25b8e663b0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_78e1002091c7f37f8590c0a23f145c902f8e4165\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_8e304cf9945c6734d70bcc83cc414e19980c0a36\classes.dex" />
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_02afc32fc41a89cabbb50e9247473941dc52dfe3\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_25821be8901065f8b78fadd42c85e838e9792344\classes.dex" />
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_2746da6f4c7fee128f0d120499ddb8ed10012417\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.8.0\jars\classes.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-9.8.0_ce01fa16991d3c9cc6ec10fbc994e5ebc3b83dfe\classes.dex" />
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_d279b59020351f94783ab22ce416fde9a8b85dc8\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_d7a212be30ad7f700d96b9021eabaa8c398efb29\classes.dex" />
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.1_3616bd802743b5ff205a2d3039d3b7860e40391e\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_0c1fb4d573382d7b9e745b00f109cfd4be7f1baf\classes.dex" />
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_5c4319bc12744805c6f3dfd89ab78bf79759f9f4\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.1\jars\classes.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\9.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.1_50ef9cffa582a047478ac054e9f68241b1c89497\classes.dex" />
+        sha1="4b6d9b70f93bbeb872d0948bc064ae3f3f2bcbac">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-9.4.0_99004f5991cf43f105bd02d26ef019a3f895f576\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="f70c55f57f2c7c6ae3fb44a6d07ee9908c3b8800">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_eba15f4cebf920195930d5a73b17282ad25579b0\classes.dex" />
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-10.0.1_1bfaf7005908dda205595caa669a7e74a1999946\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.0.1_43c86378f4aabf16f512dc893ee0c538a4d39d39\classes.dex" />
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_442aa5e06ad8531ca6b95eeb13543113c43c440c\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_d3a465396910e9dd5d33833c469bfafff2b3715c\classes.dex" />
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_228907c2119cf6bcacf01241bafc89696b5fb7b5\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-9.8.0_30660f917ac339f6dea02819affad752bb278ca4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_c1943ec0e21dec16b2d31d7c9216aaf83b16f6d3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ca851be26ff89f5b32cc222cee98139fb3fac830">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-9.8.0_4b3f4f0100a615b46b56b62b7d170dcff7d0f39b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_c4341aeccdece55e315ae146aa56b1a41112ccab\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="190a642ba16d1421296a4d794606279b80039c59">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-9.8.0_d828f897c3d8dfe2669550e26b9e0084bf9acd91\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_20df7fb28cfcfa4a2e00b3fe92aff623288a45aa\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_b9faa995eb2c0bb86de77bb5147f0068c8325ca2\classes.dex" />
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_629f9ceeeb27120132cc60886738eecba0f36e3c\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_fd7a9ef64a594f929a41119fc9fe8edb58565957\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_efb41e485d41330508da91439a282d0e6ec6001b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.0-beta3\97675641051febfee098903cc0eff62f2826e34e\retrofit-2.0.0-beta3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="97675641051febfee098903cc0eff62f2826e34e">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.0-beta3_e9ea169531c90b7cfaba9467f15165c33b7e15d9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_ee86b27004be1645ae9de908894f07b4603d2d23\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.4\695b63d702f505b9b916e02272e3b6381bade7f\gson-2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.4_49e03c397da11321611883bc982a8d178bd13fd8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="C:\Users\Nico\Desktop\projet\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_83fbbf5d59648152f9d4f37c2f400f5235f2feb7\classes.dex" />
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_7d9a07154fd706db460b3ceea31f522a3f3f2e8f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_4ce93b86e4b3245e36d25919b98b41b3b3a774b2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.0.1_16b2d8e4a032fd12fcfc7320e1690028e22483d6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_35fec20e528985079cd1b6ea026e7c4e8d3b70a4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_710483f1b56a3f4e2bead1ff670f09bcd8fd44ff\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-10.0.1_f0baa09ad3e9c389f78d39f8ff57d860599bceb3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_64cf7c22786391aef4ad69e9e06ff76f55267872\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="2ad6675aa6c3a8bcd5c372528989a93878e6a7b9">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_4e2e7165370103ca2e14699a6bce4ae441c020c2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-multidex-1.0.1_63ec7fe7f57c8a1d7e0fef9901a25423804dd385\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.0.0-RC1\be7e96331952019f16dc52dce09ab25df29353d7\okhttp-3.0.0-RC1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="be7e96331952019f16dc52dce09ab25df29353d7">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.0.0-RC1_0b2370bd9dad1936ff0459e3a5f3eb681f897c75\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-10.0.1_1f989d78994f797fd07a3e5335c15e0b2404ba58\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-10.0.1_61397cd5cb94d12f73fe48f391a1427399d77081\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_fa8e1ffcb26b3c7635057fe877495cc47d78cadd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="940ed45846c9d92824028785067ef930e24b40de">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e766985ca4de9670982816e4a23c38e45c12b830\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_d1cf49e5ba5a48b9db34fa28b520dc677d167c32\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_591ed7bb653c555ff2c955fdce545935b6d9177f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_504689d9b2b1a8875bceeaed2b86cb2680f99b09\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.0.1_03986ec1a1f15cb9fbe870b2242ebab8791cf59b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.1_0831b19382d5fda1a154cf2e810e76ac6edbb931\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_fa72d8ee3d9dfdea91c2d81b704705cc4e60dab4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_ea90f28eb37758988943abb92712a243cec47a5e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Valentin\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.0-beta3\8bff75d7360aaa3866f1e6949c877dfcc2b3d3e2\converter-gson-2.0.0-beta3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8bff75d7360aaa3866f1e6949c877dfcc2b3d3e2">
+        <dex dex="C:\Users\Valentin\Desktop\sortieDeChienGa\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.0-beta3_3bdc59c40c1a511433ecf3b8954e6c8bfac11f14\classes.dex" />
     </item>
 
 </items>

@@ -74,13 +74,13 @@ public class LoginActivity extends AppCompatActivity {
             editor.putString("id", account.getId());
             editor.putString("email", account.getEmail());
             editor.putString("familyname", account.getFamilyName());
-            editor.putString("name", account.getGivenName());
+            editor.putString("name", account.getDisplayName());
             editor.apply();
             Intent launchMain = new Intent(this, MainActivity.class);
             this.startActivity(launchMain);
         }else{
             Log.i("SignIn", "Pas connecté à google");
-            Toast.makeText(this, R.string.faillog, Toast.LENGTH_LONG);
+            Toast.makeText(this, R.string.faillog, Toast.LENGTH_LONG).show();
         }
     }
     private class ClickOnGoogleButton implements View.OnClickListener{

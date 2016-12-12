@@ -39,8 +39,8 @@ public class ParcDao extends BaseDao{
     public ArrayList<Parc> selectAll(){
 
 
-        ArrayList<Parc> parcs = new ArrayList<Parc>();
-        Cursor c  = db.rawQuery("SELECT * FROM  " + tableName + " ;", null);
+        ArrayList<Parc> parcs = new ArrayList<>();
+        Cursor c  = super.db.rawQuery("SELECT * FROM  " + tableName + " ;", null);
 
         while (c.moveToNext()){
 
@@ -58,7 +58,7 @@ public class ParcDao extends BaseDao{
                     intToBool(c.getInt(9))
             ));
         }
-
+        c.close();
 
         return parcs;
     }

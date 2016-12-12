@@ -12,15 +12,15 @@ import sortiedechien.fr.sortiedechien.MainActivity;
 import sortiedechien.fr.sortiedechien.R;
 
 public class ResultSearchActivity extends AppCompatActivity {
-    private OnSearchLaunchClickListener onSearchClickLaunchListener;
+    private SearchListResultAdapter searchListResultAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_search);
-        onSearchClickLaunchListener = new OnSearchLaunchClickListener(this);
-
+        String filtre = getIntent().getStringExtra("searchPts");
+        searchListResultAdapter = new SearchListResultAdapter(this, filtre);
         ListView listeRes = (ListView) findViewById(R.id.resultList);
-        listeRes.setAdapter(onSearchClickLaunchListener.getAdapter());
+        listeRes.setAdapter(searchListResultAdapter.getAdapter());
         listeRes.deferNotifyDataSetChanged();
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#49D436")));

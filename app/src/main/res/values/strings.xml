@@ -17,4 +17,10 @@
     <string name="commentaire">Commentaires</string>
     <string name="titlesearch">Résultat de votre recherche</string>
     <string name="more">…</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="myloc">Vous êtes ici</string>
+    <string name="url_parcs" translatable="false">http://data.nantes.fr/</string>
+    <string name="update_base">Mettre à jour la base</string>
+    <string name="error">Une erreur est survenue</string>
+    <string name="title_activity_basic_search">BasicSearch</string>
 </resources>

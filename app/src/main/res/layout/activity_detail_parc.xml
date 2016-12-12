@@ -12,7 +12,6 @@
         android:textAlignment="center" />
 
     <TextView
-        android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/nom_parc" />
@@ -43,37 +42,49 @@
         android:text="@string/acceshand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/acceshand" />
+        android:id="@+id/acceshand"
+        android:clickable="false"
+        android:textAlignment="viewStart" />
 
     <CheckBox
         android:text="@string/pointdeau"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/point_eau" />
+        android:id="@+id/point_eau"
+        android:clickable="false"
+        android:focusable="false" />
 
     <CheckBox
         android:text="@string/chienauto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/chien_auto" />
+        android:id="@+id/chien_auto"
+        android:clickable="false"
+        android:focusable="false" />
 
     <CheckBox
         android:text="@string/sanitaires"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/sanitaire" />
+        android:id="@+id/sanitaire"
+        android:clickable="false"
+        android:focusable="false" />
 
     <CheckBox
         android:text="@string/jeux"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/jeux" />
+        android:id="@+id/jeux"
+        android:clickable="false"
+        android:focusable="false" />
 
     <CheckBox
         android:text="@string/parcclos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/clos" />
+        android:id="@+id/clos"
+        android:clickable="false"
+        android:focusable="false" />
 
     <RatingBar
         android:layout_width="match_parent"
