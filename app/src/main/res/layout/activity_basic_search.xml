@@ -28,15 +28,6 @@
         android:layout_height="match_parent">
 
         <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/buttonRechercheAvancee"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="160dp"
-            android:id="@+id/button8" />
-
-        <Button
             android:text="Recherche Avancée"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,41 +37,22 @@
             android:layout_alignParentEnd="true" />
 
         <Button
-            android:text="RECHERCHER"
+            android:text="@android:string/search_go"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonRecherche"
             android:layout_marginBottom="105dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editText"
-            android:layout_below="@+id/textView2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:layout_marginBottom="37dp"
-            android:id="@+id/editText2"
-            android:layout_above="@+id/editText"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_centerHorizontal="true"
+            android:elevation="0dp" />
 
         <TextView
             android:text="Nom du parc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="69dp"
             android:id="@+id/textView"
-            android:layout_above="@+id/editText2"
+            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -88,11 +60,49 @@
             android:text="Distance maximale (en mètres)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="138dp"
-            android:id="@+id/textView2"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/editTextNomParc"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView2" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/editTextDistance"
+            android:selectAllOnFocus="false" />
+
+        <TextView
+            android:text="Type de parc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6"
+            android:layout_below="@+id/editTextDistance"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextDistance"
+            android:layout_toRightOf="@+id/textView6"
+            android:layout_toEndOf="@+id/textView6"
+            android:id="@+id/spinner2" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextNomParc"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:selectAllOnFocus="true" />
 
     </RelativeLayout>
 
