@@ -21,8 +21,10 @@ import sortiedechien.fr.retrofit_arbres.NetworkTreeList;
 
 public class DbHandler extends SQLiteOpenHelper{
 
-
+    //tables
     public static final String TABLE_PARCS = "PARC";
+    public static final String TABLE_ARBRE = "ARBRE";
+    //colonnes parc
     public static final String COLUMN_LIBELLE = "LIBELLE";
     public static final String COLUMN_POSITION_X = "POSITION_X";
     public static final String COLUMN_POSITION_Y = "POSITION_Y";
@@ -33,6 +35,12 @@ public class DbHandler extends SQLiteOpenHelper{
     public static final String COLUMN_SANITAIRE = "SANITAIRE";
     public static final String COLUMN_JEUX = "JEUX";
     public static final String COLUMN_PARC_CLOS = "PARC_CLOS";
+    //colones arbres
+    public static final String COLUMN_ID  = "ID";
+    public static final String COLUMN_ADRESSE = "ADRESSE";
+    public static final String COLUMN_LONGITUDE = "LOGITUDE";
+    public static final String COLUMN_LATTITUDE = "LATTITUDE";
+    //REQUETES
     private static String DROP_PARC = "DROP TABLE IF EXISTS PARC";
     private static String DROP_ARBRE = "DROP TABLE IF EXISTS ARBRE";
     private Context context;
@@ -128,8 +136,8 @@ public class DbHandler extends SQLiteOpenHelper{
             "INSERT INTO \"parc\" VALUES('Square etienne destranges','47.2192','-1.56382',0,0,0,701,0,0,0);\n" +
             "INSERT INTO \"parc\" VALUES('Centre social de la pilotiÃ¨re','47.2452','-1.52404',0,0,0,10830,0,1,1);\n" +
             "INSERT INTO \"parc\" VALUES('Square augustin fresnel','47.2431','-1.52293',0,1,0,5600,0,1,0);\n" +
-            "INSERT INTO \"parc\" VALUES('Parc de broussais','47.2268','-1.52255',0,1,0,12130,0,1,0);\n" +
-            "CREATE TABLE ARBRE(ID TEXT,ADRESSE TEXT,GENRE TEXT,ESPECE TEXT,ALLERGENE TEXT,DIAMETRE TEXT,HAUTEUR TEXT,LATITUDE TEXT,LONGITUDE TEXT);\n"+
+            "INSERT INTO \"parc\" VALUES('Parc de broussais','47.2268','-1.52255',0,1,0,12130,0,1,0);\n";
+            /*"CREATE TABLE ARBRE(ID TEXT,ADRESSE TEXT,GENRE TEXT,ESPECE TEXT,ALLERGENE TEXT,DIAMETRE TEXT,HAUTEUR TEXT,LATITUDE TEXT,LONGITUDE TEXT);\n"+
             "INSERT INTO \"arbre\" VALUES('1','Avenue de Chanzy','Prunus','serrulata','0','43','5','47.22401','-1.545548');\n" +
             "INSERT INTO \"arbre\" VALUES('2','Quai de Versailles','Prunus','serrulata','0','43','5','47.224561','-1.553899');\n" +
             "INSERT INTO \"arbre\" VALUES('3','Rue de Miséricorde','Carpinus','betulus','1','29','5','47.22148','-1.56579');\n" +
@@ -143,7 +151,7 @@ public class DbHandler extends SQLiteOpenHelper{
             "INSERT INTO \"arbre\" VALUES('11','Boulevard de la Prairie au Duc','Prunus','serrulata','0','37','3','47.205093','-1.556954');\n" +
             "INSERT INTO \"arbre\" VALUES('12','Boulevard Georges Mandel','Prunus','serrulata','0','35','3','47.201500','-1.539705');\n" +
             "INSERT INTO \"arbre\" VALUES('13','Rue du Docteur Paul Michaux','Prunus','serrulata','0','29','3','47.207572','-1.511358');\n";
-
+*/
 
     public DbHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -187,6 +195,7 @@ public class DbHandler extends SQLiteOpenHelper{
                     TABLE_PARCS, parc.getLibelle(), parc.getPosition_x(), parc.getPosition_y(), parc.isPoint_eau(), parc.isAcces_handicape(),
                     parc.isChien_interdit(), parc.getSurface(), parc.isSanitaire(), parc.isJeux(), parc.isParc_clos());
         }
+
         @Override
         public void dataResult(List<Parc> parcs) {
             if(parcs == null|| parcs.isEmpty()){

@@ -19,7 +19,8 @@ public class ParcDao extends BaseDao{
 
 
     private String tableName = DbHandler.TABLE_PARCS;
-    private String[] allColumns = {DbHandler.COLUMN_LIBELLE,
+    private String[] allColumns = {
+            DbHandler.COLUMN_LIBELLE,
             DbHandler.COLUMN_POSITION_X,
             DbHandler.COLUMN_POSITION_Y,
             DbHandler.COLUMN_point_d_eau,
