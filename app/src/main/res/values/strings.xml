@@ -22,4 +22,5 @@
     <string name="url_parcs" translatable="false">http://data.nantes.fr/</string>
     <string name="update_base">Mettre à jour la base</string>
     <string name="error">Une erreur est survenue</string>
+    <string name="title_activity_basic_search">BasicSearch</string>
 </resources>
