@@ -28,14 +28,12 @@
             android:id="@+id/taille"
             android:layout_weight="0.36" />
 
-        <EditText
-            android:layout_width="165dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
             android:id="@+id/taille_value"
-            android:layout_weight="0.22"
-            style="@android:style/Widget.AutoCompleteTextView" />
+            android:layout_weight="0.36" />
+
     </LinearLayout>
 
     <CheckBox
@@ -89,7 +87,7 @@
     <RatingBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/popularité"
+        android:id="@+id/popularite"
         android:numStars="5" />
 
     <TextView
