@@ -130,6 +130,8 @@ public class SearchListResultAdapter {
             intent.putExtra("jeux", parc.isJeux());
             intent.putExtra("clos", parc.isParc_clos());
             intent.putExtra("popularite", 0);
+            intent.putExtra("searchPts", toFiltre(parc.isPoint_eau(), parc.isAcces_handicape(), parc.isChien_interdit(), parc.isSanitaire(), parc.isJeux(), parc.isParc_clos()));
+            intent.putExtra("comments", parc.getComments());
             context.startActivity(intent);
         }
     }
