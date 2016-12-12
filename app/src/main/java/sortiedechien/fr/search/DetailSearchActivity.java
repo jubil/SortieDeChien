@@ -46,7 +46,7 @@ public class DetailSearchActivity extends AppCompatActivity {
         popularite.setRating(intent.getIntExtra("popularite",0));
     }
 
-    
+
 
 
 

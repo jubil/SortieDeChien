@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <TextView
         android:text="@string/lieu"
         android:layout_width="match_parent"
@@ -40,49 +41,60 @@
         android:text="@string/acceshand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
         android:id="@+id/acceshand"
         android:clickable="false"
-        android:textAlignment="viewStart" />
+        android:textAlignment="textStart" />
 
     <CheckBox
         android:text="@string/pointdeau"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/point_eau"
+        android:layoutDirection="rtl"
         android:clickable="false"
-        android:focusable="false" />
+        android:focusable="false"
+        android:textAlignment="textStart" />
 
     <CheckBox
         android:text="@string/chienauto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/chien_auto"
+        android:layoutDirection="rtl"
         android:clickable="false"
-        android:focusable="false" />
+        android:focusable="false"
+        android:textAlignment="textStart" />
 
     <CheckBox
         android:text="@string/sanitaires"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sanitaire"
+        android:layoutDirection="rtl"
         android:clickable="false"
-        android:focusable="false" />
+        android:focusable="false"
+        android:textAlignment="textStart" />
 
     <CheckBox
         android:text="@string/jeux"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/jeux"
+        android:layoutDirection="rtl"
         android:clickable="false"
-        android:focusable="false" />
+        android:focusable="false"
+        android:textAlignment="textStart" />
 
     <CheckBox
         android:text="@string/parcclos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/clos"
+        android:layoutDirection="rtl"
         android:clickable="false"
-        android:focusable="false" />
+        android:focusable="false"
+        android:textAlignment="textStart" />
 
     <RatingBar
         android:layout_width="match_parent"
