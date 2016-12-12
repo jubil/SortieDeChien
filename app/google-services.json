@@ -41,6 +41,43 @@
         "ads_service": {
           "status": 1
         }
+      },
+      "client_info": {
+        "mobilesdk_app_id": "1:852814307291:android:561180c03e48503b",
+        "android_client_info": {
+          "package_name": "sortiedechien.fr.sortiedechien"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852814307291-6a8fg5j3modsgncd0qjag7ioj6f6guca.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sortiedechien.fr.sortiedechien",
+            "certificate_hash": "EA9058526EBB4280985BA0CA1529B04CB2930504"
+          }
+        },
+        {
+          "client_id": "852814307291-pbgoplqbldrunhf295gko42v9jtd7hfo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9q513-5HMUwplTo6dCHMmpgHv9zKWwCQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
       }
     }
   ],
