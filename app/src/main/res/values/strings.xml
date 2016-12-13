@@ -1,4 +1,4 @@
-<resources>
+﻿<resources>
     <string name="app_name">Cacaniche</string>
     <string name="action_settings">Déconnexion</string>
     <string name="authtext">Authentification Requise</string>
@@ -26,4 +26,15 @@
     <string name="title_activity_basic_search">BasicSearch</string>
     <string name="downloadsucces">Téléchargement de la base de données réussi</string>
     <string name="downloaderrors">Téléchargement de la base de données échoué</string>
+
+    <string name="label_nom_parc">Nom du parc</string>
+    <string name="label_distance_parc">Distance maximale (en mètres)</string>
+    <string name="label_type_parc">Type de parc : </string>
+    <string name="recherche_avancee">Recherche Avancée</string>
+    <string-array name="type_parc">
+        <item>Tous</item>
+        <item>Petit</item>
+        <item>Moyen</item>
+        <item>Grand</item>
+    </string-array>
 </resources>
