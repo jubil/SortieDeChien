@@ -16,6 +16,7 @@ import com.google.android.gms.maps.model.LatLng;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import sortiedechien.fr.dao.ParcDao;
@@ -32,9 +33,11 @@ public class SearchListResultAdapter {
     private List<Parc> parcsFiltres;
     private Context context;
     private String filtre;
-    public SearchListResultAdapter(Activity context, String filter){
+    private String[] libelles;
+    public SearchListResultAdapter(Activity context, String filter, String[] libelles){
         this.context = context;
         this.filtre = filter;
+        this.libelles = libelles;
         parcsFiltres = new ArrayList<>();
         populate();
         adapter = new AdapterSearch(context, R.id.resultList, parcsFiltres, context.getLayoutInflater());
@@ -59,8 +62,15 @@ public class SearchListResultAdapter {
             e.printStackTrace();
             return;
         }
+        List<String> libs = Arrays.asList(libelles);
         for( Parc parc : parcDao.selectAll()){
             String filter = toFiltre(parc.isPoint_eau(), parc.isAcces_handicape(), parc.isChien_interdit(), parc.isSanitaire(), parc.isJeux(), parc.isParc_clos());
+            if(filtre.equals("-1")){
+                if(libs.contains(parc.getLibelle())){
+                    parcsFiltres.add(parc);
+                }
+                continue;
+            }
             if(isFilterOk(filtre, filter)){
                 parcsFiltres.add(parc);
             }
