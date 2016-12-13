@@ -6,8 +6,16 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import sortiedechien.fr.dao.ParcDao;
+import sortiedechien.fr.data.Parc;
 import sortiedechien.fr.search.AdvancedSearchActivity;
+import sortiedechien.fr.search.ResultSearchActivity;
 import sortiedechien.fr.sortiedechien.R;
 
 public class OnRechercheClickListener implements View.OnClickListener {
@@ -37,7 +45,24 @@ public class OnRechercheClickListener implements View.OnClickListener {
     public void onClick(View view) {
         updateThis();
         Log.v("Recherche", nom + " " + distance + " " + type);
-
+        ParcDao parcDao = new ParcDao(context);
+        try{
+            parcDao.open();
+        }catch (IOException e){
+            Toast.makeText(context, R.string.error, Toast.LENGTH_LONG).show();
+            return;
+        }
+        List<String> parcs = new ArrayList<>();
+        for(Parc parc : parcDao.selectAll()){
+            if(parc.getLibelle().toLowerCase().contains( nom.toLowerCase())){
+                // ajouter les libelles souhaités
+                parcs.add(parc.getLibelle());
+            }
+        }
+        Intent intent = new Intent(context, ResultSearchActivity.class);
+        intent.putExtra("searchPts", "-1");
+        intent.putExtra("lesparcs", parcs.toArray(new String[parcs.size()]));
+        context.startActivity(intent);
     }
 
 

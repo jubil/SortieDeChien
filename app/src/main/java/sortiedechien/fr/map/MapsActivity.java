@@ -83,7 +83,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         MarkerOptions marker = new MarkerOptions()
                 .position(myLocation)
                 .title( getResources().getString(R.string.myloc))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker));
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
         mMap.addMarker(marker);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 14));
     }
