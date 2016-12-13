@@ -106,7 +106,7 @@
         android:textAlignment="textStart" />
 
     <RatingBar
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/popularite"
         android:clickable="false"
@@ -114,7 +114,9 @@
         android:focusable="false"
         android:isIndicator="true"
         android:numStars="5"
-        android:stepSize="0.1"/>
+        android:rating="0.0"
+        android:stepSize="0.0"
+        />
 
     <TextView
         android:text="@string/commentaire"

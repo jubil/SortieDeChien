@@ -68,7 +68,7 @@ public class DetailSearchActivity extends AppCompatActivity {
         Log.e("list", listView.toString());
         listView.setAdapter(adapter);
 
-
+        MainActivity.changeActionBar(getSupportActionBar(), this);
 
     }
 
