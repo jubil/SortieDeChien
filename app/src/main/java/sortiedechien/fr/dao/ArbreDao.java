@@ -48,8 +48,6 @@ public class ArbreDao extends BaseDao {
     }
 
     public void insert(int id, String adresse, float lat, float lon){
-
-        String[] params = {tablename, ""+id, ""+adresse, ""+lat, ""+lon};
-        super.db.rawQuery("INSERT INTO ? VALUES(?, ?, ?, ?);", params);
+        super.db.execSQL(String.format("INSERT INTO %s VALUES(\"%s\", \"%s\", \"%s\", \"%s\");", tablename, id, adresse, lat, lon));
     }
 }

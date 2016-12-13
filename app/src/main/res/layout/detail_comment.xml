@@ -11,8 +11,12 @@
 
     <ListView
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_weight="1"
         android:layout_height="match_parent"
         android:id="@+id/listeComs"/>
+=======
+        android:layout_height="match_parent" />
+>>>>>>> 117eea184bb85731fb1f76b6f8f16bc2497dcadb
 
 </LinearLayout>
