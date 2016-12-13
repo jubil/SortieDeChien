@@ -137,7 +137,7 @@ public class DbHandler extends SQLiteOpenHelper{
             "INSERT INTO \"parc\" VALUES('Square etienne destranges','47.2192','-1.56382',0,0,0,701,0,0,0);\n" +
             "INSERT INTO \"parc\" VALUES('Centre social de la pilotiÃ¨re','47.2452','-1.52404',0,0,0,10830,0,1,1);\n" +
             "INSERT INTO \"parc\" VALUES('Square augustin fresnel','47.2431','-1.52293',0,1,0,5600,0,1,0);\n" +
-            "INSERT INTO \"parc\" VALUES('Parc de broussais','47.2268','-1.52255',0,1,0,12130,0,1,0);\n";
+            "INSERT INTO \"parc\" VALUES('Parc de broussais','47.2268','-1.52255',0,1,0,12130,0,1,0);\n" +
             /*"CREATE TABLE ARBRE(ID TEXT,ADRESSE TEXT,GENRE TEXT,ESPECE TEXT,ALLERGENE TEXT,DIAMETRE TEXT,HAUTEUR TEXT,LATITUDE TEXT,LONGITUDE TEXT);\n"+
             "INSERT INTO \"arbre\" VALUES('1','Avenue de Chanzy','Prunus','serrulata','0','43','5','47.22401','-1.545548');\n" +
             "INSERT INTO \"arbre\" VALUES('2','Quai de Versailles','Prunus','serrulata','0','43','5','47.224561','-1.553899');\n" +
@@ -152,7 +152,78 @@ public class DbHandler extends SQLiteOpenHelper{
             "INSERT INTO \"arbre\" VALUES('11','Boulevard de la Prairie au Duc','Prunus','serrulata','0','37','3','47.205093','-1.556954');\n" +
             "INSERT INTO \"arbre\" VALUES('12','Boulevard Georges Mandel','Prunus','serrulata','0','35','3','47.201500','-1.539705');\n" +
             "INSERT INTO \"arbre\" VALUES('13','Rue du Docteur Paul Michaux','Prunus','serrulata','0','29','3','47.207572','-1.511358');\n";
-*/
+            */
+            "CREATE TABLE arbre('ID' TEXT, 'ADRESSE' TEXT, 'LATITUDE' TEXT, 'LONGITUDE' TEXT);\n"+
+            "INSERT INTO 'arbre' VALUES('1','Avenue de Chanzy','47.22401','-1.545548');\n"+
+            "INSERT INTO 'arbre' VALUES('2','Quai de Versailles','47.224561','-1.553899');\n"+ 
+            "INSERT INTO 'arbre' VALUES('3','Rue de Miséricorde','47.22148','-1.56579');\n"+ 
+            "INSERT INTO 'arbre' VALUES('4','Rue Chanoine Durville','47.230984','-1.556271');\n"+ 
+            "INSERT INTO 'arbre' VALUES('5','Avenue du parc du procé','47.218143','-1.582285');\n"+ 
+            "INSERT INTO 'arbre' VALUES('6','Boulevard Lelasseur','47.231136','-1.569624');\n"+ 
+            "INSERT INTO 'arbre' VALUES('7','Boulevard de Doulon','47.226243','-1.523164');\n"+ 
+            "INSERT INTO 'arbre' VALUES('8','Boulevard Auguste Peneau','47.227506','-1.516715');\n"+ 
+            "INSERT INTO 'arbre' VALUES('9','Boulevard Robert Schuman','47.236148','-1.568332');\n"+ 
+            "INSERT INTO 'arbre' VALUES('10','Allée Duquesne','47.218637','-1.556829');\n"+ 
+            "INSERT INTO 'arbre' VALUES('11','Boulevard de la Prairie au Duc','47.205093','-1.556954');\n"+ 
+            "INSERT INTO 'arbre' VALUES('12','Boulevard Georges Mandel','47.201500','-1.539705');\n"+ 
+            "INSERT INTO 'arbre' VALUES('13','Rue du Docteur Paul Michaux','47.207572','-1.511358');\n"+ 
+            "INSERT INTO 'arbre' VALUES('14','Rue du Général Buat','47.231291','-1.538527');\n"+ 
+            "INSERT INTO 'arbre' VALUES('15','Boulevard de Launay','47.211121','-1.575404');\n"+ 
+            "INSERT INTO 'arbre' VALUES('16','Rue du Général Buat','47.229271','-1.540381');\n"+ 
+            "INSERT INTO 'arbre' VALUES('17','131 Boulevard Saint Aignan ','47.203430','-1.581249');\n"+ 
+            "INSERT INTO 'arbre' VALUES('18','Boulvard Jules Verne','47.237728','-1.532544');\n"+ 
+            "INSERT INTO 'arbre' VALUES('19','Boulevard des Poilus','47.229476','-1.527657');\n"+ 
+            "INSERT INTO 'arbre' VALUES('20','Route de Sainte-Luce','47.228818','-1.525905');\n"+ 
+            "INSERT INTO 'arbre' VALUES('21','Boulevard de la Liberté','47.205887','-1.587841');\n"+ 
+            "INSERT INTO 'arbre' VALUES('22','Boulevard de l''égalité','47.207875','-1.587348');\n"+ 
+            "INSERT INTO 'arbre' VALUES('23','Rue du Pré Hervé','47.237728','-1.532544');\n"+ 
+            "INSERT INTO 'arbre' VALUES('24','Avenue de la Valtaiserie','47.228471','-1.522537');\n"+ 
+            "INSERT INTO 'arbre' VALUES('25','Ile de Nantes','47.211288','-1.522450');\n"+ 
+            "INSERT INTO 'arbre' VALUES('26','Nantes Erdre','47.239630','-1.542977');\n"+ 
+            "INSERT INTO 'arbre' VALUES('27','Route de Saint Joseph','47.242990','-1.534264');\n"+ 
+            "INSERT INTO 'arbre' VALUES('28','Boulevard Jules Vernes','47.242715','-1.527795');\n"+ 
+            "INSERT INTO 'arbre' VALUES('29','Antarctique','-73.203046',' -14.360584');\n"+ 
+            "INSERT INTO 'arbre' VALUES('30','Boulevard Jules Vernes','47.237728','-1.532544');\n"+ 
+            "INSERT INTO 'arbre' VALUES('31','Boulevard Lelasseur','47.230834','-1.569979');\n"+ 
+            "INSERT INTO 'arbre' VALUES('32','Square Saint Pasquier','47.228724',' -1.565964');\n"+ 
+            "INSERT INTO 'arbre' VALUES('33','Rue Paul Bellamy','47.226819',' -1.560581');\n"+ 
+            "INSERT INTO 'arbre' VALUES('34','Rue Léopold Cassegrain','47.218566,','-1.558437');\n"+ 
+            "INSERT INTO 'arbre' VALUES('35','Allée Duquesne','47.217952','-1.557017');\n"+ 
+            "INSERT INTO 'arbre' VALUES('36','Boulevard du Lapacca','43.098137','-0.042247');\n"+ 
+            "INSERT INTO 'arbre' VALUES('37','Chemin du Petit Bois','47.188103','-1.539783');\n"+ 
+            "INSERT INTO 'arbre' VALUES('38','Place Pierre Semard','47.190139','-1.547412');\n"+ 
+            "INSERT INTO 'arbre' VALUES('39','Boulvard de l''Europe','47.198140','-1.507279');\n"+ 
+            "INSERT INTO 'arbre' VALUES('40','Avenue Louise Michelle','47.188566','-1.550447');\n"+ 
+            "INSERT INTO 'arbre' VALUES('41','Avenue Alexandre Plancher','47.186739','-1.559660');\n"+ 
+            "INSERT INTO 'arbre' VALUES('42','Avenue D''Anjou','47.183483','-1.567606');\n"+ 
+            "INSERT INTO 'arbre' VALUES('43','Rue de la Trocardière','47.181157','-1.571702');\n"+ 
+            "INSERT INTO 'arbre' VALUES('44','Rue du Chêne Creux','47.172461','-1.546289');\n"+ 
+            "INSERT INTO 'arbre' VALUES('45','Rue de la Quératière','47.163769','-1.538523');\n"+ 
+            "INSERT INTO 'arbre' VALUES('46','Allée de la Fragonette','47.171455','-1.557332');\n"+ 
+            "INSERT INTO 'arbre' VALUES('47','Rue des Palombes','47.194648','-1.502664');\n"+ 
+            "INSERT INTO 'arbre' VALUES('48','Rue de la Mutualité','47.190813','-1.504229');\n"+ 
+            "INSERT INTO 'arbre' VALUES('49','Rue de la Baugerie','47.204381','-1.519200');\n"+ 
+            "INSERT INTO 'arbre' VALUES('50','Boulevard Francois Blancho','47.205301','-1.530149');\n"+ 
+            "INSERT INTO 'arbre' VALUES('51','Boulvard du Val de Chézine','47.236815','-1.610248');\n"+ 
+            "INSERT INTO 'arbre' VALUES('52','Rue de la Commune de Paris 1871','47.177119','-1.612995');\n"+ 
+            "INSERT INTO 'arbre' VALUES('53','Boulevard Nelson Mandela','47.176080','-1.620683');\n"+ 
+            "INSERT INTO 'arbre' VALUES('54','Avenue de Beauregard','47.210366','-1.657044');\n"+ 
+            "INSERT INTO 'arbre' VALUES('55','Route de Pornic','47.185730','-1.600027');\n"+ 
+            "INSERT INTO 'arbre' VALUES('56','Rue des Pêcheurs','47.187743','-1.636367');\n"+ 
+            "INSERT INTO 'arbre' VALUES('57','Bourg-Solvardière','47.217103','-1.643805');\n"+ 
+            "INSERT INTO 'arbre' VALUES('58','D107','47.197066','-1.646078');\n"+ 
+            "INSERT INTO 'arbre' VALUES('59','Avenue de la Loire','47.200594','-1.668220');\n"+ 
+            "INSERT INTO 'arbre' VALUES('60','Rue des Vignerons','47.239689','-1.669410');\n"+ 
+            "INSERT INTO 'arbre' VALUES('61','Rue de la Durantière','47.213626','-1.604009');\n"+ 
+            "INSERT INTO 'arbre' VALUES('62','Boulevard du Tertre','47.215436','-1.605733');\n"+ 
+            "INSERT INTO 'arbre' VALUES('63','Rue de la Branchoire','47.218293',' -1.607099');\n"+ 
+            "INSERT INTO 'arbre' VALUES('64','Rue de la Chicotière','47.216539','-1.612611');\n"+ 
+            "INSERT INTO 'arbre' VALUES('65','Rue du Grand Taillis','47.190552','-1.513332');\n"+ 
+            "INSERT INTO 'arbre' VALUES('66','Rue Pessac','47.205405','-1.613002');\n"+ 
+            "INSERT INTO 'arbre' VALUES('67','Avenue du Suroit','47.200339','-1.609340');\n"+ 
+            "INSERT INTO 'arbre' VALUES('68','Boulevard Jean Moulin ','47.202875','-1.603739');\n"+ 
+            "INSERT INTO 'arbre' VALUES('69','Boulevard Salvador Allende','47.217098','-1.612561');\n"+ 
+            "INSERT INTO 'arbre' VALUES('70','Rue Romain Roland','47.205195','-1.605782');\n";
 
     public DbHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
