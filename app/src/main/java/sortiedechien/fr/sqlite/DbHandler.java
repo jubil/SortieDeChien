@@ -3,13 +3,11 @@ package sortiedechien.fr.sqlite;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.io.IOException;
 import java.util.List;
 
 import sortiedechien.fr.dao.ArbreDao;
-import sortiedechien.fr.dao.BaseDao;
 import sortiedechien.fr.data.Arbre;
 import sortiedechien.fr.data.Parc;
 import sortiedechien.fr.retrofit.INetworkNotifier;
@@ -229,7 +227,6 @@ public class DbHandler extends SQLiteOpenHelper{
             for(Arbre a : arbres){
                 arbreDao.insert(a.getId(), a.getAdresse(), a.getLattitude(), a.getLongitude());
             }
-            arbreDao.close();
         }
     }
 

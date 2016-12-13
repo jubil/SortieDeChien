@@ -10,7 +10,6 @@ import retrofit2.Call;
 import retrofit2.GsonConverterFactory;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import sortiedechien.fr.data.Parc;
 import sortiedechien.fr.sortiedechien.R;
 
 /**

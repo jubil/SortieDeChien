@@ -2,7 +2,6 @@ package sortiedechien.fr.googleauth;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -20,7 +19,7 @@ public class GoogleConnectionFailedListener implements GoogleApiClient.OnConnect
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Log.e("ErrorLogin",connectionResult.getErrorMessage());
-        Toast.makeText(context, R.string.faillog, Toast.LENGTH_LONG);
+        Toast.makeText(context, R.string.faillog, Toast.LENGTH_LONG).show();
     }
     public void setContext(Context context){
         this.context = context;

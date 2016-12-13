@@ -1,11 +1,7 @@
 package sortiedechien.fr.retrofit;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
-import sortiedechien.fr.data.Parc;
 
 /**
  * Created by Faseldi on 09/12/2016.

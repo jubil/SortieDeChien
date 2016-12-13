@@ -2,7 +2,6 @@ package sortiedechien.fr.dao;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
@@ -15,8 +14,6 @@ import sortiedechien.fr.sqlite.DbHandler;
  */
 
 public class ParcDao extends BaseDao{
-
-
 
     private String tableName = DbHandler.TABLE_PARCS;
     private String[] allColumns = {
@@ -35,18 +32,12 @@ public class ParcDao extends BaseDao{
         super(context);
     }
 
-
-
     public ArrayList<Parc> selectAll(){
-
 
         ArrayList<Parc> parcs = new ArrayList<>();
         Cursor c  = super.db.rawQuery("SELECT * FROM  " + tableName + " ;", null);
 
         while (c.moveToNext()){
-
-
-
             parcs.add(new Parc(c.getString(0),
                     c.getString(1),
                     c.getString(2),
@@ -60,20 +51,10 @@ public class ParcDao extends BaseDao{
             ));
         }
         c.close();
-
         return parcs;
     }
 
-
     private boolean intToBool(int i){
-
-        boolean b = false;
-
-        if (i == 1){
-
-            b = true;
-        }
-
-        return b;
+        return  i == 1;
     }
 }

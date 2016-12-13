@@ -8,10 +8,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
@@ -19,27 +17,21 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 import sortiedechien.fr.dao.ParcDao;
 import sortiedechien.fr.data.Parc;
-import sortiedechien.fr.search.AdvancedSearchActivity;
 import sortiedechien.fr.sortiedechien.MainActivity;
-import sortiedechien.fr.sortiedechien.Manifest;
 import sortiedechien.fr.sortiedechien.R;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private LatLng lastLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +41,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#49D436")));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        MainActivity.changeActionBar(getSupportActionBar(), this);
     }
 
 
@@ -80,7 +70,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         try {
             parcDao.open();
             List<Parc> parcs = parcDao.selectAll();
-            parcDao.close();
             for (Parc p : parcs) {
                 double lat = Double.valueOf(p.getPosition_x());
                 double lng = Double.valueOf(p.getPosition_y());

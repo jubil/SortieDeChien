@@ -26,4 +26,5 @@
     <string name="title_activity_basic_search">BasicSearch</string>
     <string name="downloadsucces">Téléchargement de la base de données réussi</string>
     <string name="downloaderrors">Téléchargement de la base de données échoué</string>
+    <string name="appcolor" translatable="false">#49D436</string>
 </resources>

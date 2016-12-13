@@ -1,9 +1,6 @@
 package sortiedechien.fr.retrofit_arbres;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.util.FloatProperty;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.io.BufferedInputStream;

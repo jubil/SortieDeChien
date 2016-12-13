@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -42,7 +41,7 @@ public class SearchListResultAdapter {
     public static String toFiltre(boolean ... booleen){
         String res = "";
         for(boolean b : booleen){
-            res += b ? "1":"0";
+            res += b ? '1':'0';
         }
         return res;
     }
@@ -131,7 +130,6 @@ public class SearchListResultAdapter {
             intent.putExtra("clos", parc.isParc_clos());
             intent.putExtra("popularite", 0);
             intent.putExtra("searchPts", toFiltre(parc.isPoint_eau(), parc.isAcces_handicape(), parc.isChien_interdit(), parc.isSanitaire(), parc.isJeux(), parc.isParc_clos()));
-            intent.putExtra("comments", parc.getComments());
             context.startActivity(intent);
         }
     }

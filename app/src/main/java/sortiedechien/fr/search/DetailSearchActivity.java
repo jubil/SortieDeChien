@@ -4,9 +4,9 @@ package sortiedechien.fr.search;
  * Created by Nico on 09/12/2016.
  */
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.CheckBox;
 import android.widget.RatingBar;
 import android.widget.TextView;
