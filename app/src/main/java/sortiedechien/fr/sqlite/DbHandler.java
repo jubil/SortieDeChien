@@ -192,7 +192,7 @@ public class DbHandler extends SQLiteOpenHelper{
             "INSERT INTO 'arbre' VALUES('34','Rue Léopold Cassegrain','47.218566,','-1.558437');\n"+ 
             "INSERT INTO 'arbre' VALUES('35','Allée Duquesne','47.217952','-1.557017');\n"+ 
             "INSERT INTO 'arbre' VALUES('36','Boulevard du Lapacca','43.098137','-0.042247');\n"+ 
-            "INSERT INTO 'arbre' VALUES('37','Chemin du Petit Bois','47.188103','-1.539783');\n"+ 
+f            "INSERT INTO 'arbre' VALUES('37','Chemin du Petit Bois','47.188103','-1.539783');\n"+
             "INSERT INTO 'arbre' VALUES('38','Place Pierre Semard','47.190139','-1.547412');\n"+ 
             "INSERT INTO 'arbre' VALUES('39','Boulvard de l''Europe','47.198140','-1.507279');\n"+ 
             "INSERT INTO 'arbre' VALUES('40','Avenue Louise Michelle','47.188566','-1.550447');\n"+ 
