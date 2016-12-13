@@ -1,7 +1,12 @@
 package sortiedechien.fr.sortiedechien;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -71,5 +76,12 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         }
+    }
+    public static final void changeActionBar(@Nullable  ActionBar actionBar, Context context){
+        if(actionBar == null){
+            return;
+        }
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(context.getResources().getString(R.string.appcolor))));
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 }

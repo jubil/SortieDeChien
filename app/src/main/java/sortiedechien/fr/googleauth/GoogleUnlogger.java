@@ -3,11 +3,7 @@ package sortiedechien.fr.googleauth;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
 import sortiedechien.fr.sortiedechien.LoginActivity;
 

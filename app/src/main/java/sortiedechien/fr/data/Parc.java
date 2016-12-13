@@ -18,7 +18,6 @@ public class Parc {
     private boolean sanitaire;
     private boolean jeux;
     private boolean parc_clos;
-    private List<String> comments;
 
     public Parc(String libelle, String position_x, String position_y, boolean point_eau, boolean acces_handicape, boolean chien_interdit, int surface, boolean sanitaire, boolean jeux, boolean parc_clos ){
 
@@ -33,14 +32,6 @@ public class Parc {
         this.jeux = jeux;
         this.parc_clos = parc_clos;
 
-    }
-
-    public void addComment(String comment){
-        comments.add(comment);
-    }
-
-    public String[] getComments(){
-        return comments.toArray(new String[comments.size()]);
     }
 
     public String getLibelle() {

@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.util.List;
 
 import sortiedechien.fr.dao.ArbreDao;
-import sortiedechien.fr.dao.BaseDao;
 import sortiedechien.fr.data.Arbre;
 import sortiedechien.fr.data.Parc;
 import sortiedechien.fr.retrofit.INetworkNotifier;
@@ -255,8 +254,8 @@ public class DbHandler extends SQLiteOpenHelper {
 
         private String createInsertParc(Parc parc) {
             return String.format("INSERT INTO %s VALUES(\"%s'\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");",
-                    TABLE_PARCS, parc.getLibelle(), parc.getPosition_x(), parc.getPosition_y(), parc.isPoint_eau(), parc.isAcces_handicape(),
-                    parc.isChien_interdit(), parc.getSurface(), parc.isSanitaire(), parc.isJeux(), parc.isParc_clos());
+                    TABLE_PARCS, parc.getLibelle(), parc.getPosition_x(), parc.getPosition_y(), parc.isPoint_eau() ? 1 : 0, parc.isAcces_handicape() ? 1 : 0,
+                    parc.isChien_interdit() ? 1 : 0, parc.getSurface(), parc.isSanitaire() ? 1 : 0, parc.isJeux() ? 1 : 0, parc.isParc_clos() ? 1 : 0);
         }
 
         @Override
@@ -292,7 +291,6 @@ public class DbHandler extends SQLiteOpenHelper {
             for (Arbre a : arbres) {
                 arbreDao.insert(a.getId(), a.getAdresse(), a.getLattitude(), a.getLongitude());
             }
-            arbreDao.close();
         }
     }
 

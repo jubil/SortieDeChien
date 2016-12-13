@@ -1,21 +1,14 @@
 package sortiedechien.fr.search.basic;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 
-import java.io.Console;
-
+import sortiedechien.fr.sortiedechien.MainActivity;
 import sortiedechien.fr.sortiedechien.R;
 
 public class BasicSearch extends AppCompatActivity {
@@ -29,6 +22,8 @@ public class BasicSearch extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Button b = (Button) findViewById(R.id.buttonRechercheAvancee);
+        b.setOnClickListener(new OnRechercheAvanceeClickListener());
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.type_parc, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -38,10 +33,9 @@ public class BasicSearch extends AppCompatActivity {
         recherche.setOnClickListener(new OnRechercheClickListener(this));
 
         Button rechercheAvancee = (Button) findViewById(R.id.buttonRechercheAvancee);
-        rechercheAvancee.setOnClickListener(new OnRechercheAvanceeClickListener(this));
+        rechercheAvancee.setOnClickListener(new OnRechercheAvanceeClickListener());
 
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#49D436")));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        MainActivity.changeActionBar(getSupportActionBar(),this);
 
     }
 

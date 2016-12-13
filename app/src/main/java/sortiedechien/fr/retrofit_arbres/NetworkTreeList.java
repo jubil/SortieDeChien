@@ -7,8 +7,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import sortiedechien.fr.data.Arbre;
-
 /**
  * Created by Faseldi on 12/12/2016.
  */

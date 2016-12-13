@@ -1,25 +1,11 @@
 package sortiedechien.fr.search;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.ListAdapter;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
-import sortiedechien.fr.dao.ParcDao;
-import sortiedechien.fr.data.Parc;
 import sortiedechien.fr.sortiedechien.R;
-import sortiedechien.fr.sqlite.DbHandler;
 
 import static sortiedechien.fr.search.SearchListResultAdapter.toFiltre;
 

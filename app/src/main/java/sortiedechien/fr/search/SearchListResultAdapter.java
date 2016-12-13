@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,12 +65,11 @@ public class SearchListResultAdapter {
                 parcsFiltres.add(parc);
             }
         }
-        parcDao.close();
     }
     private boolean isFilterOk(String filter, String filtre){
-        char[] chars = filtre.toCharArray();
+        char[] chars = filter.toCharArray();
         for(int i = 0; i < chars.length; i++){
-            if(chars[i] == '1' && chars[i] != filter.charAt(i)){
+            if(chars[i] == '1' && chars[i] != filtre.charAt(i)){
                 return false;
             }
         }
@@ -130,7 +130,6 @@ public class SearchListResultAdapter {
             intent.putExtra("clos", parc.isParc_clos());
             intent.putExtra("popularite", 0);
             intent.putExtra("searchPts", toFiltre(parc.isPoint_eau(), parc.isAcces_handicape(), parc.isChien_interdit(), parc.isSanitaire(), parc.isJeux(), parc.isParc_clos()));
-            intent.putExtra("comments", parc.getComments());
             context.startActivity(intent);
         }
     }

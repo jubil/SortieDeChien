@@ -3,8 +3,9 @@ package sortiedechien.fr.search;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 
@@ -22,9 +23,7 @@ public class ResultSearchActivity extends AppCompatActivity {
         ListView listeRes = (ListView) findViewById(R.id.resultList);
         listeRes.setAdapter(searchListResultAdapter.getAdapter());
         listeRes.deferNotifyDataSetChanged();
-
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#49D436")));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        MainActivity.changeActionBar(getSupportActionBar(), this);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
