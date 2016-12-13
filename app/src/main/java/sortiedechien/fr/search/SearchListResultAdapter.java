@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +42,7 @@ public class SearchListResultAdapter {
     public static String toFiltre(boolean ... booleen){
         String res = "";
         for(boolean b : booleen){
-            res += b ? '1':'0';
+            res += b ? "1":"0";
         }
         return res;
     }
@@ -64,12 +65,11 @@ public class SearchListResultAdapter {
                 parcsFiltres.add(parc);
             }
         }
-        parcDao.close();
     }
     private boolean isFilterOk(String filter, String filtre){
-        char[] chars = filtre.toCharArray();
+        char[] chars = filter.toCharArray();
         for(int i = 0; i < chars.length; i++){
-            if(chars[i] == '1' && chars[i] != filter.charAt(i)){
+            if(chars[i] == '1' && chars[i] != filtre.charAt(i)){
                 return false;
             }
         }
