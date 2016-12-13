@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 import sortiedechien.fr.comments.CommentAdapter;
 import sortiedechien.fr.data.Commentaire;
+import sortiedechien.fr.sortiedechien.MainActivity;
 import sortiedechien.fr.sortiedechien.R;
 
 public class DetailSearchActivity extends AppCompatActivity {
