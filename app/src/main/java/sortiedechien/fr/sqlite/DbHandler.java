@@ -8,6 +8,7 @@ import android.util.Log;
 import java.io.IOException;
 import java.util.List;
 
+import sortiedechien.fr.dao.ArbreDao;
 import sortiedechien.fr.dao.BaseDao;
 import sortiedechien.fr.data.Arbre;
 import sortiedechien.fr.data.Parc;
@@ -43,6 +44,8 @@ public class DbHandler extends SQLiteOpenHelper{
     //REQUETES
     private static String DROP_PARC = "DROP TABLE IF EXISTS PARC";
     private static String DROP_ARBRE = "DROP TABLE IF EXISTS ARBRE";
+    private static String CREATE_PARC = "CREATE TABLE PARC ( LIBELLE VARCHAR PRIMARY KEY, POSITION_X VARCHAR, POSITION_Y VARCHAR, point_eau BOOLEAN, acces_handicape BOOLEAN, chien_interdit BOOLEAN, surface NUMBER, sanitaire BOOLEAN, jeux BOOLEAN, parc_clos BOOLEAN);";
+    private static String CREATE_TREE = "CREATE TABLE ARBRE(ID TEXT,ADRESSE TEXT, LATITUDE TEXT,LONGITUDE TEXT);";
     private Context context;
     public static final String CREATE_DB =
             "CREATE TABLE PARC ( LIBELLE VARCHAR PRIMARY KEY, POSITION_X VARCHAR, POSITION_Y VARCHAR, point_eau BOOLEAN, acces_handicape BOOLEAN, chien_interdit BOOLEAN, surface NUMBER, sanitaire BOOLEAN, jeux BOOLEAN, parc_clos BOOLEAN);\n" +
@@ -191,7 +194,7 @@ public class DbHandler extends SQLiteOpenHelper{
             this.database = database;
         }
         private String createInsertParc(Parc parc){
-            return String.format("INSERT INTO %s VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s');",
+            return String.format("INSERT INTO %s VALUES(\"%s'\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");",
                     TABLE_PARCS, parc.getLibelle(), parc.getPosition_x(), parc.getPosition_y(), parc.isPoint_eau(), parc.isAcces_handicape(),
                     parc.isChien_interdit(), parc.getSurface(), parc.isSanitaire(), parc.isJeux(), parc.isParc_clos());
         }
@@ -201,13 +204,11 @@ public class DbHandler extends SQLiteOpenHelper{
             if(parcs == null|| parcs.isEmpty()){
                 return;
             }
-            database.beginTransaction();
             database.execSQL(DROP_PARC);
+            database.execSQL(CREATE_PARC);
             for(Parc p : parcs){
                 database.execSQL(createInsertParc(p));
             }
-            database.setTransactionSuccessful();
-            database.endTransaction();
         }
     }
     public class NotifierArbres implements sortiedechien.fr.retrofit_arbres.INetworkNotifier{
@@ -217,13 +218,18 @@ public class DbHandler extends SQLiteOpenHelper{
         }
         @Override
         public void dataResult(List<Arbre> arbres) {
-            database.beginTransaction();
-            database.execSQL(DROP_ARBRE);
-            for(Arbre a : arbres){
-                //Log.e("ARBRE", a);
+            ArbreDao arbreDao = new ArbreDao(context);
+            try{
+                arbreDao.open();
+            }catch(IOException e){
+                return;
             }
-            database.setTransactionSuccessful();
-            database.endTransaction();
+            database.execSQL(DROP_ARBRE);
+            database.execSQL(CREATE_TREE);
+            for(Arbre a : arbres){
+                arbreDao.insert(a.getId(), a.getAdresse(), a.getLattitude(), a.getLongitude());
+            }
+            arbreDao.close();
         }
     }
 

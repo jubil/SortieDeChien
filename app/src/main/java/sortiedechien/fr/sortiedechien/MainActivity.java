@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 ParcDao parcDao = new ParcDao(getApplicationContext());
                 parcDao.open();
                 parcDao.changeVersion();
-                parcDao.close();
             }catch (IOException e){
                 Toast.makeText(getApplicationContext(),getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
             }

@@ -2,6 +2,7 @@ package sortiedechien.fr.retrofit_arbres;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.FloatProperty;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -54,7 +55,6 @@ public class ArbresRemoteAccess {
         }
     }
     public void callForListArbres(List<INetworkNotifier> notifiers){
-        List<Arbre> res = new ArrayList<>();
         downloadFile(notifiers);
     }
     private void downloadFile(final List<INetworkNotifier> notifiers) {
@@ -64,6 +64,12 @@ public class ArbresRemoteAccess {
             public void onResponse(Response<ResponseBody> response) {
                 if (response.isSuccess()) {
                     File target = new File(cache.getAbsolutePath()+"/unzipdir");
+                    if(target.exists()){
+                        for(File file : target.listFiles()) {
+                            file.delete();
+                        }
+                    }
+                    target.delete();
                     for(File f : cache.listFiles()){ // remove existing zip files or zip extract dirs
                         if(f.getAbsolutePath().endsWith("zip")|| f.getAbsolutePath().contains("zip")){
                             f.delete();
@@ -98,8 +104,12 @@ public class ArbresRemoteAccess {
         BufferedReader br = new BufferedReader(new FileReader(file));
         String line;
         List<Arbre> arbres = new ArrayList<>();
+        br.readLine(); // on passe la premiere ligne avec les noms des colonnes
         while ((line = br.readLine()) != null) {
-            String[] spl = line.split(";");
+            String[] spl = line.split(",");
+            try{
+                arbres.add(new Arbre(Integer.valueOf(spl[0]), spl[1], Float.valueOf(spl[2]), Float.valueOf(spl[3])));
+            }catch(Exception e){}
         }
         for( INetworkNotifier notifier :notifiers){
             notifier.dataResult(arbres);
