@@ -1,5 +1,6 @@
 package sortiedechien.fr.sortiedechien;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,14 +16,16 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Scope;
+import com.google.android.gms.common.api.Status;
 
 import sortiedechien.fr.googleauth.AccountInformations;
 import sortiedechien.fr.googleauth.GoogleConnectionFailedListener;
 
 public class LoginActivity extends AppCompatActivity {
     public static final int RC_SIGN_IN = 20;
-    private GoogleApiClient mGoogleApiClient;
+    private static GoogleApiClient mGoogleApiClient;
     private GoogleConnectionFailedListener onConnectionFailedListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,5 +98,20 @@ public class LoginActivity extends AppCompatActivity {
             Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
             startActivityForResult(signInIntent, RC_SIGN_IN);
         }
+    }
+    public static final void disconnect(final Context context){
+        if(mGoogleApiClient == null || !mGoogleApiClient.isConnected()){
+            Intent intent = new Intent(context, LoginActivity.class);
+            context.startActivity(intent);
+            return;
+        }
+        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
+                new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(Status status) {
+                        Intent intent = new Intent(context, LoginActivity.class);
+                        context.startActivity(intent);
+                    }
+                });
     }
 }
