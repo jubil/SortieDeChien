@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -130,6 +129,8 @@ public class SearchListResultAdapter {
             intent.putExtra("jeux", parc.isJeux());
             intent.putExtra("clos", parc.isParc_clos());
             intent.putExtra("popularite", 0);
+
+
             context.startActivity(intent);
         }
     }

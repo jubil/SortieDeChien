@@ -1,24 +1,17 @@
 package sortiedechien.fr.sortiedechien;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
-import java.util.Calendar;
 
-import sortiedechien.fr.dao.BaseDao;
 import sortiedechien.fr.dao.ParcDao;
 import sortiedechien.fr.googleauth.AccountInformations;
 import sortiedechien.fr.googleauth.GoogleUnlogger;
