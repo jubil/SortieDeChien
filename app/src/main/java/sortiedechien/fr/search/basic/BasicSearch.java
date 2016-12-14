@@ -20,6 +20,7 @@ public class BasicSearch extends AppCompatActivity {
 
         setContentView(R.layout.activity_basic_search);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.search);
         setSupportActionBar(toolbar);
 
         Button b = (Button) findViewById(R.id.buttonRechercheAvancee);

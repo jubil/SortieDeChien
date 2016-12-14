@@ -10,7 +10,8 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:fitsSystemWindows="false">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -86,15 +87,6 @@
             android:selectAllOnFocus="true" />
 
         <Button
-            android:text="@string/recherche_avancee"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonRechercheAvancee"
-            android:layout_below="@+id/buttonRecherche"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <Button
             android:text="@android:string/search_go"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,7 +96,19 @@
             android:layout_alignLeft="@+id/buttonRechercheAvancee"
             android:layout_alignStart="@+id/buttonRechercheAvancee"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:background="#BA5524" />
+
+        <Button
+            android:text="@string/recherche_avancee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonRechercheAvancee"
+            android:background="#BA5524"
+            android:layout_below="@+id/buttonRecherche"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="13dp" />
 
     </RelativeLayout>
 
