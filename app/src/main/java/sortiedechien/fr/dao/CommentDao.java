@@ -2,15 +2,7 @@ package sortiedechien.fr.dao;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
@@ -63,14 +55,12 @@ public class CommentDao extends BaseDao {
     }
 
 
-    public void insert(String image, String nom, Timestamp temps, int rating, String contenu) {
+    public void insert(String image, String nom, Timestamp temps, int rating, String contenu, String libelle) {
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         try {
             String id = sha1(timestamp.toString());
-            String[] params = {tablename,};
-
-            db.rawQuery("INSERT INTO ? VALUES(?, ?, ?, ?, ?, ?)", params);
+            db.execSQL(String.format("INSERT INTO %s VALUES(%s, '%s', '%s', '%s', %s, '%s', %s)", tablename, id, nom, image, contenu, libelle, rating, temps ));
 
 
         } catch (NoSuchAlgorithmException e) {
