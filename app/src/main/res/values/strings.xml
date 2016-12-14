@@ -37,4 +37,7 @@
         <item>Moyen</item>
         <item>Grand</item>
     </string-array>
+    <string name="valider">Valider</string>
+    <string name="postcomment">Ajouter un commentaire</string>
+    <string name="submitimpossible">Ajout impossile, texte vide</string>
 </resources>
