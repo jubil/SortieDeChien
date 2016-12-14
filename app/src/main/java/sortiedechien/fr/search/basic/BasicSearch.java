@@ -16,7 +16,7 @@ public class BasicSearch extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.v("DEBUG", "Ceci est un test");
+        //Log.v("DEBUG", "Ceci est un test");
 
         setContentView(R.layout.activity_basic_search);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

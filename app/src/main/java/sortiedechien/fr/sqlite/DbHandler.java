@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.List;
 
 import sortiedechien.fr.dao.ArbreDao;
@@ -24,6 +25,7 @@ public class DbHandler extends SQLiteOpenHelper {
     //tables
     public static final String TABLE_PARCS = "PARC";
     public static final String TABLE_ARBRE = "ARBRE";
+    public static final String TABLE_COMMENTAIRE = "COMMENTAIRE";
     //colonnes parc
     public static final String COLUMN_LIBELLE = "LIBELLE";
     public static final String COLUMN_POSITION_X = "POSITION_X";
@@ -35,17 +37,25 @@ public class DbHandler extends SQLiteOpenHelper {
     public static final String COLUMN_SANITAIRE = "SANITAIRE";
     public static final String COLUMN_JEUX = "JEUX";
     public static final String COLUMN_PARC_CLOS = "PARC_CLOS";
-    //colones arbres
+    //colonnes arbre
     public static final String COLUMN_ID = "ID";
     public static final String COLUMN_ADRESSE = "ADRESSE";
     public static final String COLUMN_LONGITUDE = "LOGITUDE";
     public static final String COLUMN_LATTITUDE = "LATTITUDE";
+    //colonnes commentaire
+    public static final String COLUMN_ID_C = "ID";
+    public static final String COLUMN_NOM = "NOM";
+    public static final String COLUMN_IMG = "IMG";
+    public static final String COLUMN_CONTENU = "CONTENU";
+    public static final String COLUMN_LIBELLE_PARC = "LIBELLE_PARC";
+    public static final String COLUMN_NOTE = "NOTE";
+    public static final String COLUMN_DATE = "DATE";
     //REQUETES
     private static String DROP_PARC = "DROP TABLE IF EXISTS PARC";
     private static String DROP_ARBRE = "DROP TABLE IF EXISTS ARBRE";
     private static String CREATE_PARC = "CREATE TABLE PARC ( LIBELLE VARCHAR PRIMARY KEY, POSITION_X VARCHAR, POSITION_Y VARCHAR, point_eau BOOLEAN, acces_handicape BOOLEAN, chien_interdit BOOLEAN, surface NUMBER, sanitaire BOOLEAN, jeux BOOLEAN, parc_clos BOOLEAN);";
     private static String CREATE_TREE = "CREATE TABLE ARBRE(ID TEXT,ADRESSE TEXT, LATITUDE TEXT,LONGITUDE TEXT);";
-    private Context context;
+    public static Context context;
     public static final String CREATE_DB =
             "CREATE TABLE PARC ( LIBELLE VARCHAR PRIMARY KEY, POSITION_X VARCHAR, POSITION_Y VARCHAR, point_eau BOOLEAN, acces_handicape BOOLEAN, chien_interdit BOOLEAN, surface NUMBER, sanitaire BOOLEAN, jeux BOOLEAN, parc_clos BOOLEAN);\n" +
                     "INSERT INTO \"parc\" VALUES('Parc du grand-blottereau','47.2276','-1.50934',1,1,0,192660,1,1,1);\n" +
@@ -209,7 +219,10 @@ public class DbHandler extends SQLiteOpenHelper {
                     "INSERT INTO 'arbre' VALUES('67','Avenue du Suroit','47.200339','-1.609340');\n" +
                     "INSERT INTO 'arbre' VALUES('68','Boulevard Jean Moulin ','47.202875','-1.603739');\n" +
                     "INSERT INTO 'arbre' VALUES('69','Boulevard Salvador Allende','47.217098','-1.612561');\n" +
-                    "INSERT INTO 'arbre' VALUES('70','Rue Romain Roland','47.205195','-1.605782');\n";
+                    "INSERT INTO 'arbre' VALUES('70','Rue Romain Roland','47.205195','-1.605782');\n"
+                    + "CREATE TABLE COMMENTAIRE (id NUMBER PRIMARY KEY, nom VARCHAR, img VARCHAR, contenu VARCHAR, LIBELLE_PARC VARCHAR, NOTE NUMBER, DATE TIMESTAMP);"
+
+    ;
 
     public DbHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -293,5 +306,6 @@ public class DbHandler extends SQLiteOpenHelper {
             }
         }
     }
+
 
 }
