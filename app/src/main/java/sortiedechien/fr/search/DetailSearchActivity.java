@@ -7,7 +7,6 @@ package sortiedechien.fr.search;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ListView;
@@ -15,7 +14,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import sortiedechien.fr.comments.CommentAdapter;
