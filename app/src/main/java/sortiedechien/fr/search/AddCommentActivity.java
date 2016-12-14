@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,13 +15,13 @@ import sortiedechien.fr.sortiedechien.R;
 
 public class AddCommentActivity extends AppCompatActivity {
     EditText comment;
-    String libelle;
+    String libelle, filtre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_comment);
         libelle = getIntent().getStringExtra("libelle");
-        String filtre = getIntent().getStringExtra("searchPts");
+        filtre = getIntent().getStringExtra("searchPts");
 
 
         comment = (EditText) findViewById(R.id.editComment);
@@ -29,6 +30,15 @@ public class AddCommentActivity extends AppCompatActivity {
         MainActivity.changeActionBar(getSupportActionBar(), this);;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId() == android.R.id.home){
+            Intent intent = new Intent(this, DetailSearchActivity.class);
+            intent.putExtra("searchPts", filtre);
+            startActivity(intent);
+        }
+        return true;
+    }
 
     private class OnClickOnSubmit implements View.OnClickListener{
 
@@ -36,7 +46,7 @@ public class AddCommentActivity extends AppCompatActivity {
         public void onClick(View view) {
 
             String text = comment.getText().toString();
-            if(text == null || text.isEmpty()){
+            if(text.isEmpty()){
                 Toast.makeText(view.getContext(), getText(R.string.submitimpossible), Toast.LENGTH_SHORT).show();
                 return;
             }

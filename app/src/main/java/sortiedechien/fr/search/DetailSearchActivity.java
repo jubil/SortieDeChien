@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.RatingBar;
@@ -25,7 +27,7 @@ public class DetailSearchActivity extends AppCompatActivity {
 
     private ListView listView;
     private ArrayList<Commentaire> commentaires = new ArrayList<Commentaire>();
-
+    private String filtre, libelle;
     public DetailSearchActivity(){
 
         Commentaire commentaire = new Commentaire(R.drawable.feuilles, "jean", "5 min", 3, "aha");
@@ -37,9 +39,10 @@ public class DetailSearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_parc);
         Intent intent = getIntent();
-
+        filtre = intent.getStringExtra("searchPts");
         TextView nom_parc = (TextView) findViewById(R.id.nom_parc);
-        nom_parc.setText(intent.getStringExtra("nom_parc"));
+        libelle = intent.getStringExtra("nom_parc");
+        nom_parc.setText(libelle);
 
         TextView taille = (TextView) findViewById(R.id.taille_value);
         taille.setText(intent.getStringExtra("taille"));
@@ -67,10 +70,30 @@ public class DetailSearchActivity extends AppCompatActivity {
         CommentAdapter adapter = new CommentAdapter(this,R.layout.row_comment_layout, commentaires);
         Log.e("list", listView.toString());
         listView.setAdapter(adapter);
-
+        findViewById(R.id.accessaddcomment).setOnClickListener( new OnClickAddComment() );
         MainActivity.changeActionBar(getSupportActionBar(), this);
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId() == android.R.id.home){
+            Intent intent = new Intent(this, ResultSearchActivity.class);
+            intent.putExtra("searchPts", filtre);
+            startActivity(intent);
+        }
+        return true;
+    }
+
+    private class OnClickAddComment implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(view.getContext(), AddCommentActivity.class);
+            intent.putExtra("libelle", libelle);
+            intent.putExtra("searchPts", filtre);
+            startActivity(intent);
+        }
+    }
 
 }
