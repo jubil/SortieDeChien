@@ -60,7 +60,7 @@ public class CommentDao extends BaseDao {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         try {
             String id = sha1(timestamp.toString());
-            db.execSQL(String.format("INSERT INTO %s VALUES('%s', '%s', '%s', '%s', '%s', %s, '%s')", tablename, id, nom, image, contenu, libelle, rating, timestamp.toString() ));
+            db.execSQL(String.format("INSERT INTO %s VALUES(\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", %s, \"%s\")", tablename, id, nom, image, contenu, libelle, rating, timestamp.toString() ));
 
 
         } catch (NoSuchAlgorithmException e) {

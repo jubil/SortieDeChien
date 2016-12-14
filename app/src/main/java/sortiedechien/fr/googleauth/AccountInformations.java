@@ -28,4 +28,7 @@ public class AccountInformations {
         }
         editor.apply();
     }
+    public static String getURL(SharedPreferences preferences){
+        return preferences.getString("url","");
+    }
 }

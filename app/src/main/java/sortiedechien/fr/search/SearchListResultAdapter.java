@@ -154,7 +154,7 @@ public class SearchListResultAdapter {
         }
         @Override
         public void onClick(View view) {
-            Uri gmmIntentUri = Uri.parse("geo:"+parc.getPosition_x()+","+parc.getPosition_y());
+            Uri gmmIntentUri = Uri.parse("google.navigation:q="+parc.getPosition_x()+","+parc.getPosition_y());
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
             mapIntent.setPackage("com.google.android.apps.maps");
             if (mapIntent.resolveActivity(context.getPackageManager()) != null) {
