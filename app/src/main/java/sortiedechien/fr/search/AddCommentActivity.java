@@ -1,6 +1,7 @@
 package sortiedechien.fr.search;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,8 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
+import java.io.IOException;
+
+import sortiedechien.fr.dao.CommentDao;
+import sortiedechien.fr.googleauth.AccountInformations;
 import sortiedechien.fr.sortiedechien.MainActivity;
 import sortiedechien.fr.sortiedechien.R;
 
@@ -50,7 +56,16 @@ public class AddCommentActivity extends AppCompatActivity {
                 Toast.makeText(view.getContext(), getText(R.string.submitimpossible), Toast.LENGTH_SHORT).show();
                 return;
             }
-
+            CommentDao commentDao = new CommentDao(view.getContext());
+            try{
+                commentDao.open();
+            }catch(IOException e){
+                Toast.makeText(view.getContext(), getText(R.string.error), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            SharedPreferences preferences = getSharedPreferences(AccountInformations.prefName, MODE_PRIVATE);
+            int note = ((RatingBar) findViewById(R.id.ratingBarComment)).getNumStars() % 5;
+            commentDao.insert(AccountInformations.getURL(preferences), AccountInformations.getName(preferences), note, text, libelle);
             Intent intent = new Intent(view.getContext(), ResultSearchActivity.class);
             intent.putExtra("searchPts", libelle);
 

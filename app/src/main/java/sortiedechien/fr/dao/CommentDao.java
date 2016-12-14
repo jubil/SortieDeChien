@@ -2,15 +2,7 @@ package sortiedechien.fr.dao;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
@@ -46,8 +38,8 @@ public class CommentDao extends BaseDao {
 
         ArrayList<Commentaire> commentaires = new ArrayList<Commentaire>();
 
-        String[] params = {tablename, allColumns[4], libelle};
-        Cursor c = db.rawQuery("SELECT * FROM ? WHERE ? = '?'", params);
+
+        Cursor c = db.rawQuery(String.format("SELECT * FROM %s WHERE %s = '%s' ;", tablename, allColumns[4], libelle), null);
 
 
         while (c.moveToNext()) {
@@ -63,14 +55,12 @@ public class CommentDao extends BaseDao {
     }
 
 
-    public void insert(String image, String nom, Timestamp temps, int rating, String contenu) {
+    public void insert(String image, String nom, int rating, String contenu, String libelle) {
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         try {
             String id = sha1(timestamp.toString());
-            String[] params = {tablename,};
-
-            db.rawQuery("INSERT INTO ? VALUES(?, ?, ?, ?, ?, ?)", params);
+            db.execSQL(String.format("INSERT INTO %s VALUES(\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", %s, \"%s\")", tablename, id, nom, image, contenu, libelle, rating, timestamp.toString() ));
 
 
         } catch (NoSuchAlgorithmException e) {

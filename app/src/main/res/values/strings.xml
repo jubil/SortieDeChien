@@ -32,6 +32,7 @@
     <string name="label_type_parc">Type de parc : </string>
     <string name="recherche_avancee">Recherche Avancée</string>
     <string name="boutonCOm">Ajouter un commentaire!</string>
+    <string name="tableComVide">Aucun commentaire à afficher...</string>
     <string-array name="type_parc">
         <item>Tous</item>
         <item>Petit</item>

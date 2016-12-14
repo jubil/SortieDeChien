@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
             editor.putString("email", account.getEmail());
             editor.putString("familyname", account.getFamilyName());
             editor.putString("name", account.getDisplayName());
+            editor.putString("url", account.getPhotoUrl() == null ? "" : account.getPhotoUrl().toString());
             editor.apply();
             Intent launchMain = new Intent(this, MainActivity.class);
             this.startActivity(launchMain);

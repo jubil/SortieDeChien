@@ -220,7 +220,7 @@ public class DbHandler extends SQLiteOpenHelper {
                     "INSERT INTO 'arbre' VALUES('68','Boulevard Jean Moulin ','47.202875','-1.603739');\n" +
                     "INSERT INTO 'arbre' VALUES('69','Boulevard Salvador Allende','47.217098','-1.612561');\n" +
                     "INSERT INTO 'arbre' VALUES('70','Rue Romain Roland','47.205195','-1.605782');\n"
-                    + "CREATE TABLE COMMENTAIRE (id NUMBER PRIMARY KEY, nom VARCHAR, img VARCHAR, contenu VARCHAR, LIBELLE_PARC VARCHAR, NOTE NUMBER, DATE TIMESTAMP);"
+                    + "CREATE TABLE COMMENTAIRE (id VARCHAR PRIMARY KEY, nom VARCHAR, img VARCHAR, contenu VARCHAR, LIBELLE_PARC VARCHAR, NOTE NUMBER, DATE TIMESTAMP);"
 
     ;
 

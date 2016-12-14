@@ -51,7 +51,7 @@ public class CommentAdapter extends ArrayAdapter{
 
             if (image != null){
 
-                image.setImageResource(c.getImage());
+                image.setImageDrawable(c.getDrawable());
             }
 
             if (nom != null){
