@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginRight="10dp"
         android:id="@+id/imageCom"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/imageCom"
         android:id="@+id/nom"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_below="@id/imageCom"
         android:id="@+id/temps"/>
     
     <RatingBar
@@ -31,10 +36,15 @@
         android:max="5"
         android:numStars="5"
         android:rating="0.0"
-        android:stepSize="0.0"/>
+        android:stepSize="0.0"
+        android:layout_below="@id/temps"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/contenu"/>
+        android:id="@+id/contenu"
+        android:layout_below="@id/rating"/>
 
-</LinearLayout>
+
+
+</RelativeLayout>

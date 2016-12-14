@@ -31,6 +31,7 @@
     <string name="label_distance_parc">Distance maximale (en mètres)</string>
     <string name="label_type_parc">Type de parc : </string>
     <string name="recherche_avancee">Recherche Avancée</string>
+    <string name="boutonCOm">Ajouter un commentaire!</string>
     <string-array name="type_parc">
         <item>Tous</item>
         <item>Petit</item>
