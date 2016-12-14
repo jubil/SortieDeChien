@@ -7,12 +7,14 @@ package sortiedechien.fr.search;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -28,7 +30,7 @@ public class DetailSearchActivity extends AppCompatActivity {
 
 
     private ListView listView;
-    private ArrayList<Commentaire> commentaires = new ArrayList<Commentaire>();
+    private ArrayList<Commentaire> commentaires;
     private String filtre, libelle;
 
     @Override
@@ -66,6 +68,15 @@ public class DetailSearchActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listeComs);
 
         findViewById(R.id.accessaddcomment).setOnClickListener( new OnClickAddComment() );
+
+        CommentDao commentDao = new CommentDao(this);
+        try{
+            commentDao.open();
+            commentaires = commentDao.select(libelle);
+        }catch (IOException e){
+            Toast.makeText(this, getText(R.string.error), Toast.LENGTH_SHORT).show();
+            commentaires = new ArrayList<>();
+        }
 
         if (!(commentaires.isEmpty())) {
 
