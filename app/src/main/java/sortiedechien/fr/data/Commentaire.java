@@ -1,7 +1,17 @@
 package sortiedechien.fr.data;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import sortiedechien.fr.sqlite.DbHandler;
 
 /**
  * Created by guillaume on 12/12/16.
@@ -10,14 +20,14 @@ import android.media.Image;
 public class Commentaire {
 
 
-    private int image;
+    private String image;
     private String nom;
     private String temps;
     private int rating;
     private String contenu;
 
 
-    public Commentaire(int image, String nom, String temps, int rating, String contenu) {
+    public Commentaire(String image, String nom, String temps, int rating, String contenu) {
         this.image = image;
         this.nom = nom;
         this.temps = temps;
@@ -26,11 +36,11 @@ public class Commentaire {
     }
 
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -64,5 +74,18 @@ public class Commentaire {
 
     public void setContenu(String contenu) {
         this.contenu = contenu;
+    }
+
+
+    private Drawable urlToDrawable(String url) throws IOException {
+
+        Bitmap x;
+
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.connect();
+        InputStream input = connection.getInputStream();
+        x = BitmapFactory.decodeStream(input);
+
+        return new BitmapDrawable(DbHandler.context.getResources(), x);
     }
 }
