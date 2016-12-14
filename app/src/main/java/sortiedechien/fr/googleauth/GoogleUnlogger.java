@@ -5,6 +5,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.MenuItem;
 
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+
 import sortiedechien.fr.sortiedechien.LoginActivity;
 
 /**
@@ -23,8 +27,7 @@ public class GoogleUnlogger implements MenuItem.OnMenuItemClickListener{
     @Override
     public boolean onMenuItemClick(MenuItem menuItem) {
         disconnect(context.getSharedPreferences(AccountInformations.prefName, Context.MODE_PRIVATE));
-        Intent intent = new Intent(context, LoginActivity.class);
-        context.startActivity(intent);
+        LoginActivity.disconnect(context);
         return true;
     }
 }

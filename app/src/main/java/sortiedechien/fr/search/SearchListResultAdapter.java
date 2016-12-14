@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -109,6 +110,7 @@ public class SearchListResultAdapter {
             ((TextView) view.findViewById(R.id.distancetext)).setText(toDistanceUnit(distance.intValue()));
             ((TextView)view.findViewById(R.id.textresult)).setText(data.get(position).getLibelle());
             view.findViewById(R.id.detailsbutton).setOnClickListener(new OnDetailsClickListener(context, data.get(position)));
+            view.setOnClickListener(new OnItemCickListener(context, data.get(position)));
             return view;
         }
         private Location toLocation(double latitude, double longitude){
@@ -141,6 +143,23 @@ public class SearchListResultAdapter {
             intent.putExtra("popularite", 0);
             intent.putExtra("searchPts", toFiltre(parc.isPoint_eau(), parc.isAcces_handicape(), parc.isChien_interdit(), parc.isSanitaire(), parc.isJeux(), parc.isParc_clos()));
             context.startActivity(intent);
+        }
+    }
+    private class OnItemCickListener implements View.OnClickListener{
+        private Context context;
+        private Parc parc;
+        private OnItemCickListener(Context context, Parc parc){
+            this.context = context;
+            this.parc = parc;
+        }
+        @Override
+        public void onClick(View view) {
+            Uri gmmIntentUri = Uri.parse("geo:"+parc.getPosition_x()+","+parc.getPosition_y());
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            mapIntent.setPackage("com.google.android.apps.maps");
+            if (mapIntent.resolveActivity(context.getPackageManager()) != null) {
+                context.startActivity(mapIntent);
+            }
         }
     }
 }
