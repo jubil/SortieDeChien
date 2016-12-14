@@ -15,6 +15,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import sortiedechien.fr.comments.CommentAdapter;
@@ -43,6 +44,7 @@ public class DetailSearchActivity extends AppCompatActivity {
         CommentDao commentDao = new CommentDao(getApplicationContext());
         try {
             commentDao.open();
+            commentDao.insert("http://www.pokepedia.fr/images/thumb/e/e7/Pikachu-RFVF.png/250px-Pikachu-RFVF.png", "pikachu", 3, "salut", "Parc de beaulieu");
             commentaires = commentDao.select(intent.getStringExtra("nom_parc"));
 
         } catch (IOException e) {

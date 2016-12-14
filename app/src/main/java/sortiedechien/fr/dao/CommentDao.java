@@ -55,12 +55,12 @@ public class CommentDao extends BaseDao {
     }
 
 
-    public void insert(String image, String nom, Timestamp temps, int rating, String contenu, String libelle) {
+    public void insert(String image, String nom, int rating, String contenu, String libelle) {
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         try {
             String id = sha1(timestamp.toString());
-            db.execSQL(String.format("INSERT INTO %s VALUES(%s, '%s', '%s', '%s', %s, '%s', %s)", tablename, id, nom, image, contenu, libelle, rating, temps ));
+            db.execSQL(String.format("INSERT INTO %s VALUES('%s', '%s', '%s', '%s', '%s', %s, '%s')", tablename, id, nom, image, contenu, libelle, rating, timestamp.toString() ));
 
 
         } catch (NoSuchAlgorithmException e) {

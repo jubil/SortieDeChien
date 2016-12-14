@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,6 +25,7 @@ public class Commentaire {
     private String temps;
     private int rating;
     private String contenu;
+    private Drawable drawable;
 
 
     public Commentaire(String image, String nom, String temps, int rating, String contenu) {
@@ -67,16 +69,11 @@ public class Commentaire {
         this.rating = rating;
     }
 
-    public Drawable getImageDrawable() {
+    public Drawable getDrawable() {
 
-        Drawable d = null;
-        try {
-            d = urlToDrawable(image);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        new ImageTask().execute(image);
 
-        return d;
+        return drawable;
     }
 
     public String getContenu() {
@@ -88,15 +85,38 @@ public class Commentaire {
     }
 
 
-    private Drawable urlToDrawable(String url) throws IOException {
+    private class ImageTask extends AsyncTask<String, Void, Void>{
 
-        Bitmap x;
 
-        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-        connection.connect();
-        InputStream input = connection.getInputStream();
-        x = BitmapFactory.decodeStream(input);
+        @Override
+        protected Void doInBackground(String... strings) {
 
-        return new BitmapDrawable(DbHandler.context.getResources(), x);
+
+
+            try {
+               drawable =  urlToDrawable(strings[0]);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            return null;
+        }
+
+
+        private Drawable urlToDrawable(String url) throws IOException {
+
+            Bitmap x;
+
+            HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+            connection.connect();
+            InputStream input = connection.getInputStream();
+            x = BitmapFactory.decodeStream(input);
+
+            return new BitmapDrawable(DbHandler.context.getResources(), x);
+        }
     }
+
+
 }
