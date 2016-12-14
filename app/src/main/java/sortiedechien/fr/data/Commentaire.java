@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -66,6 +65,18 @@ public class Commentaire {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public Drawable getImageDrawable() {
+
+        Drawable d = null;
+        try {
+            d = urlToDrawable(image);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return d;
     }
 
     public String getContenu() {

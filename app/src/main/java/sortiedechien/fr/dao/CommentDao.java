@@ -46,8 +46,8 @@ public class CommentDao extends BaseDao {
 
         ArrayList<Commentaire> commentaires = new ArrayList<Commentaire>();
 
-        String[] params = {tablename, allColumns[4], libelle};
-        Cursor c = db.rawQuery("SELECT * FROM ? WHERE ? = '?'", params);
+
+        Cursor c = db.rawQuery(String.format("SELECT * FROM %s WHERE %s = '%s' ;", tablename, allColumns[4], libelle), null);
 
 
         while (c.moveToNext()) {
