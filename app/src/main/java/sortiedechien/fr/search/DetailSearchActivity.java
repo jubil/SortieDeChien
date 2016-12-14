@@ -16,12 +16,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import sortiedechien.fr.comments.CommentAdapter;
-import sortiedechien.fr.dao.CommentDao;
 import sortiedechien.fr.data.Commentaire;
 import sortiedechien.fr.sortiedechien.MainActivity;
 import sortiedechien.fr.sortiedechien.R;
