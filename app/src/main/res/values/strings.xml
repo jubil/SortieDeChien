@@ -35,7 +35,7 @@
     <string-array name="type_parc">
         <item>Tous</item>
         <item>Petit</item>
-        <item>Moyen</item>
         <item>Grand</item>
+        <item>Intredit aux chiens</item>
     </string-array>
 </resources>

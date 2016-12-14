@@ -8,6 +8,7 @@ import android.location.LocationManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -28,7 +29,7 @@ public class OnRechercheClickListener implements View.OnClickListener {
 
     private String nom;
     private int distance;
-    private String type;
+    private int type;
 
 
     public OnRechercheClickListener(Activity context){
@@ -36,6 +37,10 @@ public class OnRechercheClickListener implements View.OnClickListener {
     }
 
     private void updateThis() {
+
+        Spinner spinnerType = (Spinner) context.findViewById(R.id.spinner);
+        type = spinnerType.getSelectedItemPosition();
+
         EditText ETNom = (EditText) context.findViewById(R.id.editTextNomParc);
         nom = ETNom.getText().toString();
 
@@ -71,9 +76,18 @@ public class OnRechercheClickListener implements View.OnClickListener {
 
             //Log.v("DEBUG", ""+distanceParc);
 
-            if(distanceParc < distance){
-                parcs.add(parc.getLibelle());
-            }
+
+                if(distanceParc < distance && parc.getLibelle().toLowerCase().contains( nom.toLowerCase())){
+                    if((type == 0 && !parc.isChien_interdit())
+                            || (type == 1 && parc.getSurface()<20000 && !parc.isChien_interdit())
+                            || (type == 2 && parc.getSurface()>100000 && !parc.isChien_interdit())
+                            || (type == 3 && parc.isChien_interdit())
+                            ){
+                        parcs.add(parc.getLibelle());
+                    }
+                }
+
+
 
 
 
