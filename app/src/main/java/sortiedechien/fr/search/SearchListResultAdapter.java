@@ -113,15 +113,15 @@ public class SearchListResultAdapter {
             view.setOnClickListener(new OnItemCickListener(context, data.get(position)));
             return view;
         }
-        private Location toLocation(double latitude, double longitude){
-            Location myLoc = new Location(LocationManager.GPS_PROVIDER);
-            myLoc.setLatitude(latitude);
-            myLoc.setLongitude(longitude);
-            return myLoc;
-        }
-        private String toDistanceUnit(int metters){
-            return metters > 1000 ? metters/1000+" km" : metters+" m";
-        }
+    }
+    public static String toDistanceUnit(int metters){
+        return metters > 1000 ? metters/1000+" km" : metters+" m";
+    }
+    public static Location toLocation(double latitude, double longitude){
+        Location myLoc = new Location(LocationManager.GPS_PROVIDER);
+        myLoc.setLatitude(latitude);
+        myLoc.setLongitude(longitude);
+        return myLoc;
     }
     private class OnDetailsClickListener implements View.OnClickListener{
         private Parc parc;

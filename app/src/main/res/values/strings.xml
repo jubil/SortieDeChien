@@ -42,4 +42,5 @@
     <string name="valider">Valider</string>
     <string name="postcomment">Ajouter un commentaire</string>
     <string name="submitimpossible">Ajout impossile, texte vide</string>
+    <string name="titlesearchtree">Aucun résultat coresspondant</string>
 </resources>

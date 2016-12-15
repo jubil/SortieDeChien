@@ -39,7 +39,7 @@ public class CommentDao extends BaseDao {
         ArrayList<Commentaire> commentaires = new ArrayList<Commentaire>();
 
 
-        Cursor c = db.rawQuery(String.format("SELECT * FROM %s WHERE %s = '%s' ;", tablename, allColumns[4], libelle), null);
+        Cursor c = db.rawQuery(String.format("SELECT * FROM %s WHERE %s = \"%s\" ;", tablename, allColumns[4], libelle), null);
 
 
         while (c.moveToNext()) {
@@ -50,7 +50,7 @@ public class CommentDao extends BaseDao {
                     c.getInt(5),
                     c.getString(3)));
         }
-
+        c.close();
         return commentaires;
     }
 

@@ -28,6 +28,18 @@ public class ResultSearchActivity extends AppCompatActivity {
         listeRes.setAdapter(searchListResultAdapter.getAdapter());
         listeRes.deferNotifyDataSetChanged();
         MainActivity.changeActionBar(getSupportActionBar(), this);
+        ifEmpty(TreesList.class);
+    }
+    private void ifEmpty(Class<?> clazz){
+        if(searchListResultAdapter.getAdapter().isEmpty()){
+            Intent intent = new Intent(this, clazz);
+            startActivity(intent);
+        }
+    }
+    @Override
+    public void onRestart(){
+        super.onResume();
+        ifEmpty(AdvancedSearchActivity.class);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item){

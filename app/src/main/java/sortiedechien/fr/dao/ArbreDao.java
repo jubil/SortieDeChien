@@ -30,8 +30,7 @@ public class ArbreDao extends BaseDao {
     public ArrayList<Arbre> selectAll(){
 
         ArrayList<Arbre> arbres = new ArrayList<Arbre>();
-        String[] params = {tablename};
-        Cursor c = super.db.rawQuery("SELECT * FROM ?", params);
+        Cursor c = super.db.rawQuery("SELECT * FROM "+tablename, null);
 
         while (c.moveToNext()){
             arbres.add(new Arbre(c.getInt(0), c.getString(1), c.getFloat(2), c.getFloat(3)));
